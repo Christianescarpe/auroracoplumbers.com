@@ -1,0 +1,24 @@
+{
+  "brandName": "Aurora Plumbing Guide",
+  "cityName": "Aurora",
+  "citySlug": "aurora-co",
+  "regionName": "Colorado",
+  "regionAbbrev": "CO",
+  "marketStatus": "provisional_unconfirmed",
+  "referralMarketConfirmed": false,
+  "referralContactEnabled": false,
+  "callsEnabled": false,
+  "formSubmissionEnabled": false,
+  "referralPhone": {
+    "live": false,
+    "e164": null,
+    "display": null
+  },
+  "noindex": true,
+  "productionHost": null,
+  "canonicalHost": "http://127.0.0.1:43217",
+  "allowNonLocalCanonical": false,
+  "contentDate": "2026-11-07",
+  "contentDateLabel": "November 7, 2026",
+  "port": 43217
+}

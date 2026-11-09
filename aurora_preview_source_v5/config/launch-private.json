@@ -1,0 +1,70 @@
+{
+  "publicSiteMustNotCopyThisFile": true,
+  "doNotContactAccountManager": true,
+  "doNotPurchaseDomain": true,
+  "doNotPlaceCallsOrSendLeads": true,
+  "doNotInventLocalFactsForUnsourcedCities": true,
+  "activateAnyPhone": false,
+  "routing": "unresolved",
+  "publisherPayoutTarget": "About $100 actual qualified-call publisher payout. Not verified for Aurora. Not a historical Top Bid and not a revenue forecast.",
+  "auroraMeetsPayoutTarget": false,
+  "liveCampaign1459AuroraAcceptanceVerified": false,
+  "doNotClaimNetworkAcceptsAllListedServices": true,
+  "hvacExcluded": true,
+  "phonesDoNotActivate": [
+    {
+      "number": "857-201-2772",
+      "status": "Retired old routing. Do not use."
+    },
+    {
+      "number": "708-350-9399",
+      "status": "Historical replacement mapped to an older campaign. Not verified for current routing. Not selected."
+    },
+    {
+      "number": "857-201-0860",
+      "status": "Seen on visible Plumbing campaign 1459. Not verified as Aurora routing. Not selected."
+    }
+  ],
+  "campaigns": {
+    "1380": "Not the configuration to reuse. Do not treat an older coverage file as current Aurora acceptance.",
+    "1459": "Visible active Plumbing campaign in a prior read-only check. Nationwide homeowner wording was not ZIP confirmation. Aurora acceptance, hours, caps, duplicates, and payout were not verified."
+  },
+  "offerNotesNotForPublicPages": {
+    "publishedOfferTextSeenEarlier": [
+      "70 / 30 Rev Share | Call",
+      "Payouts up to $18. Flat rate is available too."
+    ],
+    "guaranteedPublisherPayout": false,
+    "duplicatesNotedEarlier": "New quotes only; 30 day duplicates unpaid. Not reconfirmed for Aurora.",
+    "historicalAuroraTopBidRange": "137.20 to 164.15 across 17 enriched ZIP labels. Not a publisher payout. Do not print on the public site."
+  },
+  "chosenDomain": {
+    "name": "auroracoplumbers.com",
+    "status": "User confirmed this name. Registrar check on November 6, 2026 reported available at 12.03 USD registration and 12.03 USD renewal. Not purchased. Canonical host must stay on the local preview until a purchase and launch are approved.",
+    "notChosen": [
+      "auroraplumbingrepair.com",
+      "auroraplumberco.com",
+      "auroracoloradoplumber.com",
+      "plumberauroraco.net"
+    ],
+    "netNote": "plumberauroraco.net was asked about. Recommendation remains auroracoplumbers.com. No name was purchased."
+  },
+  "coverageFlags": {
+    "waterHeaterReplacement": "public page live as information; network acceptance unconfirmed",
+    "waterHeaterRepair": "public page live as information; network acceptance unconfirmed",
+    "tanklessInstall": "public page live as information; network acceptance unconfirmed",
+    "tanklessRepair": "public page live as information; network acceptance unconfirmed",
+    "sewerLineRepair": "public page live as information; network acceptance unconfirmed",
+    "sewerCamera": "public page live as information; network acceptance unconfirmed",
+    "drainCleaning": "public page live as information; network acceptance unconfirmed",
+    "hydroJetting": "public page live as information; network acceptance unconfirmed",
+    "leakDetection": "public page live as information; network acceptance unconfirmed",
+    "waterLineRepair": "public page live as information; network acceptance unconfirmed",
+    "repiping": "public page live as information; network acceptance unconfirmed",
+    "commercialPlumbing": "public page live as information; network acceptance unconfirmed"
+  },
+  "withheldUntilSourced": {
+    "verbatimPlumbingInventory": "Full copy-points inventory not attached yet. Do not invent extra categories. HVAC stays out.",
+    "fiftyMileRoster": "No community hub until a sourced roster gives streets, building stock, utility, and permit jurisdiction for that place. Aurora Water rules stay on Aurora pages only. No service-by-city matrix."
+  }
+}

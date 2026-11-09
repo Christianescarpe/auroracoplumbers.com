@@ -1,0 +1,68 @@
+{
+  "status": "withheld_pending_confirmed_market",
+  "city": "Stockton",
+  "cityStatus": "Provisional draft only. Not confirmed against an actual qualified-call publisher payout near $100. Do not imply this city qualifies.",
+  "note": "Research-justified intents from the November 6, 2026 brief. URLs were not generated. Do not add them as thin pages before a city is confirmed.",
+  "withheld": [
+    {
+      "path": "/water-heater-replacement/",
+      "intendedKeyword": "water heater replacement Stockton CA",
+      "whyDistinct": "Permitted tank replacement decision: repair versus replace, like-for-like versus a change, inspection scope."
+    },
+    {
+      "path": "/tankless-water-heater-installation/",
+      "intendedKeyword": "tankless water heater installation Stockton CA",
+      "whyDistinct": "Conversion prerequisites: gas capacity, venting, condensate, electrical, and household demand. Not a same-type replacement."
+    },
+    {
+      "path": "/tankless-water-heater-repair/",
+      "intendedKeyword": "tankless water heater repair Stockton CA",
+      "whyDistinct": "Existing-unit failure, descaling, and parts. Different decision from buying a new tankless heater."
+    },
+    {
+      "path": "/water-heater-repair/",
+      "intendedKeyword": "water heater repair Stockton CA",
+      "whyDistinct": "Diagnose a storage tank before replacing it."
+    },
+    {
+      "path": "/sewer-line-repair/",
+      "intendedKeyword": "sewer line repair Stockton CA",
+      "whyDistinct": "Camera findings, spot repair versus trenchless versus replacement, and the upper versus lower lateral split."
+    },
+    {
+      "path": "/drain-cleaning/",
+      "intendedKeyword": "drain cleaning Stockton CA",
+      "whyDistinct": "Blockage removal when the pipe is not yet a structural sewer replacement."
+    },
+    {
+      "path": "/hydro-jetting/",
+      "intendedKeyword": "hydro jetting Stockton CA",
+      "whyDistinct": "High-pressure cleaning only after inspection. Not safe to promise for every pipe."
+    },
+    {
+      "path": "/leak-detection/",
+      "intendedKeyword": "leak detection Stockton CA",
+      "whyDistinct": "Find the leak before excavation or a whole-house repipe."
+    },
+    {
+      "path": "/water-line-repair/",
+      "intendedKeyword": "water line repair Stockton CA",
+      "whyDistinct": "Pressurized supply pipe. Not a sewer lateral."
+    },
+    {
+      "path": "/repiping/",
+      "intendedKeyword": "repiping Stockton CA",
+      "whyDistinct": "Whole-house supply replacement, which is a different scope from one leak."
+    },
+    {
+      "path": "/guides/stockton-water-heater-permits/",
+      "intendedKeyword": "Stockton water heater permit",
+      "whyDistinct": "Standalone paperwork and inspection guide. Permit facts currently sit only in the provisional research notes."
+    },
+    {
+      "path": "/guides/stockton-sewer-lateral-responsibility/",
+      "intendedKeyword": "Stockton sewer lateral responsibility",
+      "whyDistinct": "Standalone ownership guide. Lateral facts currently sit only in the provisional research notes."
+    }
+  ]
+}

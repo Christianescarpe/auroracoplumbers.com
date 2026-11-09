@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="latTitle latDesc">
+  <title id="latTitle">Owner sewer service line and Aurora Water main</title>
+  <desc id="latDesc">The pipe from the building through the tap is the owner's. Aurora Water maintains the city main and manholes.</desc>
+  <rect width="640" height="220" fill="#f7f1e6"/>
+  <rect x="36" y="36" width="92" height="70" rx="4" fill="#163e3c"/>
+  <text x="82" y="76" text-anchor="middle" fill="#f6efe4" font-family="Georgia, serif" font-size="14">Building</text>
+  <path d="M128 88 H430" stroke="#8d432c" stroke-width="10" fill="none"/>
+  <circle cx="430" cy="88" r="9" fill="#8d432c"/>
+  <text x="280" y="74" text-anchor="middle" fill="#1c1915" font-family="Georgia, serif" font-size="14">Your service line and tap</text>
+  <path d="M300 120 H600" stroke="#163e3c" stroke-width="14" fill="none"/>
+  <path d="M430 97 V120" stroke="#8d432c" stroke-width="8"/>
+  <text x="450" y="156" fill="#1c1915" font-family="Georgia, serif" font-size="14">City main in the street, alley, or easement</text>
+  <text x="36" y="196" fill="#5c5348" font-family="Georgia, serif" font-size="13">Owner side in copper color. City main in green. Not a photo of a repair.</text>
+</svg>

@@ -1,0 +1,1023 @@
+{
+  "builtCount": 111,
+  "built": [
+    {
+      "path": "/",
+      "title": "Plumber Aurora CO | Aurora Plumbing Guide",
+      "h1": "Plumber Aurora CO",
+      "kind": "primary",
+      "intendedKeyword": "plumber Aurora CO"
+    },
+    {
+      "path": "/services/",
+      "title": "Plumbing repairs explained | Aurora Plumbing Guide",
+      "h1": "Which plumbing repair is it",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/services/water-heater-replacement/",
+      "title": "Water heater replacement in Aurora | Aurora Plumbing Guide",
+      "h1": "Water heater replacement in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water heater replacement Aurora CO"
+    },
+    {
+      "path": "/services/water-heater-repair/",
+      "title": "Water heater repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Water heater repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water heater repair Aurora CO"
+    },
+    {
+      "path": "/services/tankless-water-heater-installation/",
+      "title": "Tankless water heater installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Tankless water heater installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "tankless water heater installation Aurora CO"
+    },
+    {
+      "path": "/services/tankless-water-heater-repair/",
+      "title": "Tankless water heater repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Tankless water heater repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "tankless water heater repair Aurora CO"
+    },
+    {
+      "path": "/services/sewer-line-repair/",
+      "title": "Sewer line repair in Aurora, Colorado | Aurora Plumbing Guide",
+      "h1": "Sewer line repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "sewer line repair Aurora CO"
+    },
+    {
+      "path": "/services/sewer-camera-inspection/",
+      "title": "Sewer camera inspection in Aurora | Aurora Plumbing Guide",
+      "h1": "Sewer camera inspection in Aurora",
+      "kind": "service",
+      "intendedKeyword": "sewer camera inspection Aurora CO"
+    },
+    {
+      "path": "/services/drain-cleaning/",
+      "title": "Drain cleaning in Aurora, Colorado | Aurora Plumbing Guide",
+      "h1": "Drain cleaning in Aurora",
+      "kind": "service",
+      "intendedKeyword": "drain cleaning Aurora CO"
+    },
+    {
+      "path": "/services/hydro-jetting/",
+      "title": "Hydro-jetting in Aurora, Colorado | Aurora Plumbing Guide",
+      "h1": "Hydro-jetting in Aurora",
+      "kind": "service",
+      "intendedKeyword": "hydro jetting Aurora CO"
+    },
+    {
+      "path": "/services/leak-detection/",
+      "title": "Leak detection in Aurora | Aurora Plumbing Guide",
+      "h1": "Leak detection in Aurora",
+      "kind": "service",
+      "intendedKeyword": "leak detection Aurora CO"
+    },
+    {
+      "path": "/services/water-line-repair/",
+      "title": "Water line repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Water line repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water line repair Aurora CO"
+    },
+    {
+      "path": "/services/bathtub-shower-installation/",
+      "title": "Bathtub and shower installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Bathtub and shower installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "bathtub and shower installation Aurora CO"
+    },
+    {
+      "path": "/services/faucet-sink-fixture-repair/",
+      "title": "Faucet and fixture repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Faucet and fixture repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "faucet sink and fixture repair Aurora CO"
+    },
+    {
+      "path": "/services/toilet-repair-installation/",
+      "title": "Toilet repair and installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Toilet repair and installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "toilet repair and installation Aurora CO"
+    },
+    {
+      "path": "/services/garbage-disposal-repair/",
+      "title": "Garbage disposal repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Garbage disposal repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "garbage disposal repair and installation Aurora CO"
+    },
+    {
+      "path": "/services/frozen-pipe-repair/",
+      "title": "Frozen pipe repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Frozen pipe repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "frozen pipe repair Aurora CO"
+    },
+    {
+      "path": "/services/plumbing-winterization/",
+      "title": "Plumbing winterization in Aurora | Aurora Plumbing Guide",
+      "h1": "Plumbing winterization in Aurora",
+      "kind": "service",
+      "intendedKeyword": "plumbing winterization Aurora CO"
+    },
+    {
+      "path": "/services/general-plumbing-repair/",
+      "title": "General plumbing repair in Aurora | Aurora Plumbing Guide",
+      "h1": "General plumbing repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "general plumbing repairs Aurora CO"
+    },
+    {
+      "path": "/services/pipe-repair-replacement/",
+      "title": "Pipe repair and replacement in Aurora | Aurora Plumbing Guide",
+      "h1": "Pipe repair and replacement in Aurora",
+      "kind": "service",
+      "intendedKeyword": "pipe repair and replacement Aurora CO"
+    },
+    {
+      "path": "/services/whole-house-repiping/",
+      "title": "Whole-house repiping in Aurora | Aurora Plumbing Guide",
+      "h1": "Whole-house repiping in Aurora",
+      "kind": "service",
+      "intendedKeyword": "whole house repiping Aurora CO"
+    },
+    {
+      "path": "/services/commercial-plumbing/",
+      "title": "Commercial plumbing in Aurora | Aurora Plumbing Guide",
+      "h1": "Commercial plumbing in Aurora",
+      "kind": "service",
+      "intendedKeyword": "commercial plumbing Aurora CO"
+    },
+    {
+      "path": "/services/remodel-addition-plumbing/",
+      "title": "Remodel plumbing in Aurora | Aurora Plumbing Guide",
+      "h1": "Remodel and addition plumbing in Aurora",
+      "kind": "service",
+      "intendedKeyword": "remodel and addition plumbing Aurora CO"
+    },
+    {
+      "path": "/services/plumbing-inspection/",
+      "title": "Plumbing inspection in Aurora | Aurora Plumbing Guide",
+      "h1": "Plumbing inspection in Aurora",
+      "kind": "service",
+      "intendedKeyword": "plumbing inspection Aurora CO"
+    },
+    {
+      "path": "/services/water-pressure-problems/",
+      "title": "Water pressure problems in Aurora | Aurora Plumbing Guide",
+      "h1": "Water pressure problems in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water pressure repair Aurora CO"
+    },
+    {
+      "path": "/services/sump-pump-repair-installation/",
+      "title": "Sump pump repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Sump pump repair and installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "sump pump repair and installation Aurora CO"
+    },
+    {
+      "path": "/services/sewer-ejector-pumps/",
+      "title": "Sewer ejector pumps in Aurora | Aurora Plumbing Guide",
+      "h1": "Sewer ejector pumps in Aurora",
+      "kind": "service",
+      "intendedKeyword": "sewer ejector pump repair Aurora CO"
+    },
+    {
+      "path": "/services/backwater-valve-installation/",
+      "title": "Backwater valves in Aurora | Aurora Plumbing Guide",
+      "h1": "Backwater valves in Aurora",
+      "kind": "service",
+      "intendedKeyword": "backwater valve installation Aurora CO"
+    },
+    {
+      "path": "/services/backflow-preventers/",
+      "title": "Backflow preventers in Aurora | Aurora Plumbing Guide",
+      "h1": "Backflow preventers in Aurora",
+      "kind": "service",
+      "intendedKeyword": "backflow testing and repair Aurora CO"
+    },
+    {
+      "path": "/services/water-treatment-installation/",
+      "title": "Water treatment installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Water treatment installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water filtration and treatment installation Aurora CO"
+    },
+    {
+      "path": "/services/water-treatment-repair/",
+      "title": "Water treatment repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Water treatment repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "water treatment system repair Aurora CO"
+    },
+    {
+      "path": "/services/gas-line-repair-installation/",
+      "title": "Gas line work in Aurora | Aurora Plumbing Guide",
+      "h1": "Gas line work in Aurora",
+      "kind": "service",
+      "intendedKeyword": "gas line repair and installation Aurora CO"
+    },
+    {
+      "path": "/services/trenchless-sewer-repair/",
+      "title": "Trenchless sewer repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Trenchless sewer repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "trenchless sewer repair Aurora CO"
+    },
+    {
+      "path": "/services/mobile-home-plumbing/",
+      "title": "Mobile home plumbing in Aurora | Aurora Plumbing Guide",
+      "h1": "Mobile home plumbing in Aurora",
+      "kind": "service",
+      "intendedKeyword": "mobile home plumbing Aurora CO"
+    },
+    {
+      "path": "/services/pool-spa-plumbing/",
+      "title": "Pool and spa plumbing in Aurora | Aurora Plumbing Guide",
+      "h1": "Pool and spa plumbing in Aurora",
+      "kind": "service",
+      "intendedKeyword": "pool spa and hot tub plumbing Aurora CO"
+    },
+    {
+      "path": "/services/radiant-floor-heating-installation/",
+      "title": "Radiant floor installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Hydronic radiant floor installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "hydronic radiant floor heating installation Aurora CO"
+    },
+    {
+      "path": "/services/radiant-floor-heating-repair/",
+      "title": "Radiant floor repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Hydronic radiant floor repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "hydronic radiant floor heating repair Aurora CO"
+    },
+    {
+      "path": "/services/well-pump-installation/",
+      "title": "Well pump installation in Aurora | Aurora Plumbing Guide",
+      "h1": "Well pump installation in Aurora",
+      "kind": "service",
+      "intendedKeyword": "well pump installation Aurora CO"
+    },
+    {
+      "path": "/services/well-pump-repair/",
+      "title": "Well pump repair in Aurora | Aurora Plumbing Guide",
+      "h1": "Well pump repair in Aurora",
+      "kind": "service",
+      "intendedKeyword": "well pump repair Aurora CO"
+    },
+    {
+      "path": "/guides/aurora-water-heater-permits/",
+      "title": "Aurora water heater permits | Aurora Plumbing Guide",
+      "h1": "Aurora water heater permits",
+      "kind": "guide",
+      "intendedKeyword": "Aurora water heater permit"
+    },
+    {
+      "path": "/guides/aurora-sewer-line-responsibility/",
+      "title": "Who owns the sewer line in Aurora | Aurora Plumbing Guide",
+      "h1": "Who owns the sewer line in Aurora",
+      "kind": "guide",
+      "intendedKeyword": "Aurora sewer line responsibility"
+    },
+    {
+      "path": "/guides/aurora-sewer-camera-second-opinion/",
+      "title": "Free sewer camera review in Aurora | Aurora Plumbing Guide",
+      "h1": "Aurora's free sewer-camera review",
+      "kind": "guide",
+      "intendedKeyword": "Aurora sewer camera second opinion"
+    },
+    {
+      "path": "/guides/plumbing-quote-checklist/",
+      "title": "Plumbing quote checklist | Aurora Plumbing Guide",
+      "h1": "Plumbing quote checklist",
+      "kind": "guide",
+      "intendedKeyword": "plumbing quote checklist"
+    },
+    {
+      "path": "/guides/tankless-conversion-quote-checklist/",
+      "title": "Tankless quote checklist | Aurora Plumbing Guide",
+      "h1": "Tankless conversion quote checklist",
+      "kind": "guide",
+      "intendedKeyword": "tankless conversion quote"
+    },
+    {
+      "path": "/guides/drain-cleaning-vs-sewer-repair/",
+      "title": "Drain cleaning versus sewer repair | Aurora Plumbing Guide",
+      "h1": "Drain cleaning versus sewer repair",
+      "kind": "guide",
+      "intendedKeyword": "drain cleaning versus sewer repair"
+    },
+    {
+      "path": "/guides/trenchless-vs-open-cut/",
+      "title": "Trenchless versus open cut | Aurora Plumbing Guide",
+      "h1": "Trenchless versus open-cut sewer repair",
+      "kind": "guide",
+      "intendedKeyword": "trenchless versus open cut"
+    },
+    {
+      "path": "/guides/water-line-vs-sewer-line/",
+      "title": "Water line versus sewer line | Aurora Plumbing Guide",
+      "h1": "Water line versus sewer line",
+      "kind": "guide",
+      "intendedKeyword": "water line versus sewer line"
+    },
+    {
+      "path": "/guides/city-county-utility-jurisdiction/",
+      "title": "Which office controls the plumbing job | Aurora Plumbing Guide",
+      "h1": "Which office controls the plumbing job",
+      "kind": "guide",
+      "intendedKeyword": "plumbing permit jurisdiction"
+    },
+    {
+      "path": "/guides/centennial-heater-vs-remodel-permit/",
+      "title": "Centennial heater versus remodel permits | Aurora Plumbing Guide",
+      "h1": "Centennial heater permits versus a remodel",
+      "kind": "guide",
+      "intendedKeyword": "Centennial water heater permit"
+    },
+    {
+      "path": "/guides/castle-rock-tankless-permit/",
+      "title": "Castle Rock tankless permit | Aurora Plumbing Guide",
+      "h1": "Castle Rock tankless permit papers",
+      "kind": "guide",
+      "intendedKeyword": "Castle Rock tankless permit"
+    },
+    {
+      "path": "/guides/denver-water-lead-service-line/",
+      "title": "Denver Water lead service lines | Aurora Plumbing Guide",
+      "h1": "Denver Water lead service lines",
+      "kind": "guide",
+      "intendedKeyword": "Denver Water lead service line"
+    },
+    {
+      "path": "/guides/lakewood-water-sewer-provider/",
+      "title": "Lakewood water and sewer providers | Aurora Plumbing Guide",
+      "h1": "Who serves water and sewer in Lakewood",
+      "kind": "guide",
+      "intendedKeyword": "Lakewood water sewer provider"
+    },
+    {
+      "path": "/guides/frozen-pipe-vs-winterization/",
+      "title": "Frozen pipes versus winterization | Aurora Plumbing Guide",
+      "h1": "Frozen pipes versus winterization",
+      "kind": "guide",
+      "intendedKeyword": "frozen pipe versus winterization"
+    },
+    {
+      "path": "/guides/well-pump-vs-city-water/",
+      "title": "Well versus city water | Aurora Plumbing Guide",
+      "h1": "Well pump versus city water",
+      "kind": "guide",
+      "intendedKeyword": "well versus city water"
+    },
+    {
+      "path": "/areas/",
+      "title": "Cities near Aurora | Aurora Plumbing Guide",
+      "h1": "Nearby cities, when the rules differ",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/areas/centennial/",
+      "title": "Plumber Centennial CO | Aurora Plumbing Guide",
+      "h1": "Plumber Centennial CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Centennial CO"
+    },
+    {
+      "path": "/areas/parker/",
+      "title": "Plumber Parker CO | Aurora Plumbing Guide",
+      "h1": "Plumber Parker CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Parker CO"
+    },
+    {
+      "path": "/areas/highlands-ranch/",
+      "title": "Plumber Highlands Ranch CO | Aurora Plumbing Guide",
+      "h1": "Plumber Highlands Ranch CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Highlands Ranch CO"
+    },
+    {
+      "path": "/areas/castle-rock/",
+      "title": "Plumber Castle Rock CO | Aurora Plumbing Guide",
+      "h1": "Plumber Castle Rock CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Castle Rock CO"
+    },
+    {
+      "path": "/areas/lakewood/",
+      "title": "Plumber Lakewood CO | Aurora Plumbing Guide",
+      "h1": "Plumber Lakewood CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Lakewood CO"
+    },
+    {
+      "path": "/areas/arvada/",
+      "title": "Plumber Arvada CO | Aurora Plumbing Guide",
+      "h1": "Plumber Arvada CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Arvada CO"
+    },
+    {
+      "path": "/areas/englewood/",
+      "title": "Plumber Englewood CO | Aurora Plumbing Guide",
+      "h1": "Plumber Englewood CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Englewood CO"
+    },
+    {
+      "path": "/areas/littleton/",
+      "title": "Plumber Littleton CO | Aurora Plumbing Guide",
+      "h1": "Plumber Littleton CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Littleton CO"
+    },
+    {
+      "path": "/areas/westminster/",
+      "title": "Plumber Westminster CO | Aurora Plumbing Guide",
+      "h1": "Plumber Westminster CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Westminster CO"
+    },
+    {
+      "path": "/areas/denver/",
+      "title": "Plumber Denver CO | Aurora Plumbing Guide",
+      "h1": "Plumber Denver CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Denver CO"
+    },
+    {
+      "path": "/areas/thornton/",
+      "title": "Plumber Thornton CO | Aurora Plumbing Guide",
+      "h1": "Plumber Thornton CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Thornton CO"
+    },
+    {
+      "path": "/areas/northglenn/",
+      "title": "Plumber Northglenn CO | Aurora Plumbing Guide",
+      "h1": "Plumber Northglenn CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Northglenn CO"
+    },
+    {
+      "path": "/areas/commerce-city/",
+      "title": "Plumber Commerce City CO | Aurora Plumbing Guide",
+      "h1": "Plumber Commerce City CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Commerce City CO"
+    },
+    {
+      "path": "/areas/brighton/",
+      "title": "Plumber Brighton CO | Aurora Plumbing Guide",
+      "h1": "Plumber Brighton CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Brighton CO"
+    },
+    {
+      "path": "/areas/federal-heights/",
+      "title": "Plumber Federal Heights CO | Aurora Plumbing Guide",
+      "h1": "Plumber Federal Heights CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Federal Heights CO"
+    },
+    {
+      "path": "/areas/wheat-ridge/",
+      "title": "Plumber Wheat Ridge CO | Aurora Plumbing Guide",
+      "h1": "Plumber Wheat Ridge CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Wheat Ridge CO"
+    },
+    {
+      "path": "/areas/broomfield/",
+      "title": "Plumber Broomfield CO | Aurora Plumbing Guide",
+      "h1": "Plumber Broomfield CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Broomfield CO"
+    },
+    {
+      "path": "/areas/louisville/",
+      "title": "Plumber Louisville CO | Aurora Plumbing Guide",
+      "h1": "Plumber Louisville CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Louisville CO"
+    },
+    {
+      "path": "/areas/longmont/",
+      "title": "Plumber Longmont CO | Aurora Plumbing Guide",
+      "h1": "Plumber Longmont CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Longmont CO"
+    },
+    {
+      "path": "/areas/greenwood-village/",
+      "title": "Plumber Greenwood Village CO | Aurora Plumbing Guide",
+      "h1": "Plumber Greenwood Village CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Greenwood Village CO"
+    },
+    {
+      "path": "/areas/lone-tree/",
+      "title": "Plumber Lone Tree CO | Aurora Plumbing Guide",
+      "h1": "Plumber Lone Tree CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Lone Tree CO"
+    },
+    {
+      "path": "/areas/castle-pines/",
+      "title": "Plumber Castle Pines CO | Aurora Plumbing Guide",
+      "h1": "Plumber Castle Pines CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Castle Pines CO"
+    },
+    {
+      "path": "/areas/edgewater/",
+      "title": "Plumber Edgewater CO | Aurora Plumbing Guide",
+      "h1": "Plumber Edgewater CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Edgewater CO"
+    },
+    {
+      "path": "/areas/sheridan/",
+      "title": "Plumber Sheridan CO | Aurora Plumbing Guide",
+      "h1": "Plumber Sheridan CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Sheridan CO"
+    },
+    {
+      "path": "/areas/foxfield/",
+      "title": "Plumber Foxfield CO | Aurora Plumbing Guide",
+      "h1": "Plumber Foxfield CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Foxfield CO"
+    },
+    {
+      "path": "/areas/bow-mar/",
+      "title": "Plumber Bow Mar CO | Aurora Plumbing Guide",
+      "h1": "Plumber Bow Mar CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Bow Mar CO"
+    },
+    {
+      "path": "/areas/columbine-valley/",
+      "title": "Plumber Columbine Valley CO | Aurora Plumbing Guide",
+      "h1": "Plumber Columbine Valley CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Columbine Valley CO"
+    },
+    {
+      "path": "/areas/cherry-hills-village/",
+      "title": "Plumber Cherry Hills Village CO | Aurora Plumbing Guide",
+      "h1": "Plumber Cherry Hills Village CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Cherry Hills Village CO"
+    },
+    {
+      "path": "/areas/watkins/",
+      "title": "Plumber Watkins CO | Aurora Plumbing Guide",
+      "h1": "Plumber Watkins CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Watkins CO"
+    },
+    {
+      "path": "/areas/bennett/",
+      "title": "Plumber Bennett CO | Aurora Plumbing Guide",
+      "h1": "Plumber Bennett CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Bennett CO"
+    },
+    {
+      "path": "/areas/strasburg/",
+      "title": "Plumber Strasburg CO | Aurora Plumbing Guide",
+      "h1": "Plumber Strasburg CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Strasburg CO"
+    },
+    {
+      "path": "/areas/byers/",
+      "title": "Plumber Byers CO | Aurora Plumbing Guide",
+      "h1": "Plumber Byers CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Byers CO"
+    },
+    {
+      "path": "/areas/elizabeth/",
+      "title": "Plumber Elizabeth CO | Aurora Plumbing Guide",
+      "h1": "Plumber Elizabeth CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Elizabeth CO"
+    },
+    {
+      "path": "/areas/cherry-creek/",
+      "title": "Plumber Cherry Creek CO | Aurora Plumbing Guide",
+      "h1": "Plumber Cherry Creek CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Cherry Creek CO"
+    },
+    {
+      "path": "/areas/four-square-mile/",
+      "title": "Plumber Four Square Mile CO | Aurora Plumbing Guide",
+      "h1": "Plumber Four Square Mile CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Four Square Mile CO"
+    },
+    {
+      "path": "/areas/franktown/",
+      "title": "Plumber Franktown CO | Aurora Plumbing Guide",
+      "h1": "Plumber Franktown CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Franktown CO"
+    },
+    {
+      "path": "/areas/sedalia/",
+      "title": "Plumber Sedalia CO | Aurora Plumbing Guide",
+      "h1": "Plumber Sedalia CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Sedalia CO"
+    },
+    {
+      "path": "/areas/the-pinery/",
+      "title": "Plumber The Pinery CO | Aurora Plumbing Guide",
+      "h1": "Plumber The Pinery CO",
+      "kind": "place",
+      "intendedKeyword": "plumber The Pinery CO"
+    },
+    {
+      "path": "/areas/stonegate/",
+      "title": "Plumber Stonegate CO | Aurora Plumbing Guide",
+      "h1": "Plumber Stonegate CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Stonegate CO"
+    },
+    {
+      "path": "/areas/meridian/",
+      "title": "Plumber Meridian CO | Aurora Plumbing Guide",
+      "h1": "Plumber Meridian CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Meridian CO"
+    },
+    {
+      "path": "/areas/roxborough-park/",
+      "title": "Plumber Roxborough Park CO | Aurora Plumbing Guide",
+      "h1": "Plumber Roxborough Park CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Roxborough Park CO"
+    },
+    {
+      "path": "/areas/evergreen/",
+      "title": "Plumber Evergreen CO | Aurora Plumbing Guide",
+      "h1": "Plumber Evergreen CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Evergreen CO"
+    },
+    {
+      "path": "/areas/erie/",
+      "title": "Plumber Erie CO | Aurora Plumbing Guide",
+      "h1": "Plumber Erie CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Erie CO"
+    },
+    {
+      "path": "/areas/lafayette/",
+      "title": "Plumber Lafayette CO | Aurora Plumbing Guide",
+      "h1": "Plumber Lafayette CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Lafayette CO"
+    },
+    {
+      "path": "/areas/superior/",
+      "title": "Plumber Superior CO | Aurora Plumbing Guide",
+      "h1": "Plumber Superior CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Superior CO"
+    },
+    {
+      "path": "/areas/boulder/",
+      "title": "Plumber Boulder CO | Aurora Plumbing Guide",
+      "h1": "Plumber Boulder CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Boulder CO"
+    },
+    {
+      "path": "/areas/golden/",
+      "title": "Plumber Golden CO | Aurora Plumbing Guide",
+      "h1": "Plumber Golden CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Golden CO"
+    },
+    {
+      "path": "/areas/morrison/",
+      "title": "Plumber Morrison CO | Aurora Plumbing Guide",
+      "h1": "Plumber Morrison CO",
+      "kind": "place",
+      "intendedKeyword": "plumber Morrison CO"
+    },
+    {
+      "path": "/areas/castle-rock/tankless-water-heater-installation/",
+      "title": "Tankless installation in Castle Rock | Aurora Plumbing Guide",
+      "h1": "Tankless water heater installation in Castle Rock",
+      "kind": "service",
+      "intendedKeyword": "tankless water heater installation Castle Rock CO"
+    },
+    {
+      "path": "/areas/centennial/water-heater-replacement/",
+      "title": "Water heater replacement in Centennial | Aurora Plumbing Guide",
+      "h1": "Water heater replacement in Centennial",
+      "kind": "service",
+      "intendedKeyword": "water heater replacement Centennial CO"
+    },
+    {
+      "path": "/guides/",
+      "title": "Plumbing guides | Aurora Plumbing Guide",
+      "h1": "Aurora plumbing guides",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/about/",
+      "title": "About | Aurora Plumbing Guide",
+      "h1": "About this guide",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/how-it-works/",
+      "title": "How referral would work | Aurora Plumbing Guide",
+      "h1": "How a referral would work",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/contact/",
+      "title": "Contact not enabled | Aurora Plumbing Guide",
+      "h1": "Call is not connected",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/privacy/",
+      "title": "Privacy | Aurora Plumbing Guide",
+      "h1": "Privacy",
+      "kind": "support",
+      "intendedKeyword": ""
+    },
+    {
+      "path": "/terms/",
+      "title": "Terms | Aurora Plumbing Guide",
+      "h1": "Terms",
+      "kind": "support",
+      "intendedKeyword": ""
+    }
+  ],
+  "notBuilt": {
+    "locationHubs": "Each architecture community URL is its own page. Byers CDP is Arapahoe County in the Census place list. Watkins, Strasburg, and the Town of Bennett are listed in both Adams and Arapahoe. A postal name is not the permit jurisdiction. Franktown, Sedalia, The Pinery, Stonegate, Meridian, and Roxborough Park are separate pages because their water districts differ even where Douglas County is the building counter. Golden and Morrison use the official pages found after the first guessed URLs 404'd.",
+    "serviceCityPages": "Castle Rock tankless installation and Centennial water heater replacement are published. The other 160 service-city hypotheses were not generated.",
+    "moreGuides": "The 15 architecture guides are published.",
+    "moreServices": "All 44 plumbing labels have a published owning page. Heating and cooling are excluded. The referral phone is unpublished.",
+    "pageCountNote": "111 is the architecture count, not a target to hit with filler. Published count is whatever this build emitted. The 271 envelope was not built. No search-volume study was run."
+  },
+  "keywordResearch": "No search-volume or keyword-difficulty study was run. Topics follow the Aurora city sources and the November 6, 2026 research handoff. Competitor pages were discovery reading, not a ranking report.",
+  "merged": {},
+  "architectureRows": 111,
+  "architectureBuilt": 111,
+  "architectureMerged": 0,
+  "architectureAddressed": 111,
+  "architectureGated": 0,
+  "gatedUrls": [],
+  "arroyoLabels": {
+    "count": 44,
+    "owningPagePublished": 44,
+    "rows": [
+      {
+        "label": "Backflow Preventers",
+        "owningUrl": "/services/backflow-preventers/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Bathtub Install or Replace",
+        "owningUrl": "/services/bathtub-shower-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Commercial Plumbing",
+        "owningUrl": "/services/commercial-plumbing/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Drain Cleaning/Unclogging",
+        "owningUrl": "/services/drain-cleaning/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Faucets, Fixtures and Pipes - Repair or Replace",
+        "owningUrl": "/services/faucet-sink-fixture-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Fixtures Installed",
+        "owningUrl": "/services/faucet-sink-fixture-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Floor & Laundry Drains",
+        "owningUrl": "/services/drain-cleaning/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Frozen Pipes & Drains Thawed",
+        "owningUrl": "/services/frozen-pipe-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Garbage Disposals",
+        "owningUrl": "/services/garbage-disposal-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Gas Lines Installed & Repaired",
+        "owningUrl": "/services/gas-line-repair-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "General Plumbing Repair",
+        "owningUrl": "/services/general-plumbing-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Hydro-Jetting Service",
+        "owningUrl": "/services/hydro-jetting/",
+        "onThisPreview": true
+      },
+      {
+        "label": "In-line Video Camera Service",
+        "owningUrl": "/services/sewer-camera-inspection/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Leaks Detected & Repaired",
+        "owningUrl": "/services/leak-detection/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Pipe Replacements & Repairs",
+        "owningUrl": "/services/pipe-repair-replacement/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Plumbing for a Remodel or Addition - Install",
+        "owningUrl": "/services/remodel-addition-plumbing/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Plumbing for Mobile Homes",
+        "owningUrl": "/services/mobile-home-plumbing/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Plumbing Inspection",
+        "owningUrl": "/services/plumbing-inspection/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Pool, Spa & Jacuzzi Service",
+        "owningUrl": "/services/pool-spa-plumbing/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Radiant Floor Heating System - Install",
+        "owningUrl": "/services/radiant-floor-heating-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Radiant Floor Heating System - Repair",
+        "owningUrl": "/services/radiant-floor-heating-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Radiant Floor Systems",
+        "owningUrl": "/services/radiant-floor-heating-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Sewer Lines",
+        "owningUrl": "/services/sewer-line-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Shower Install or Replace",
+        "owningUrl": "/services/bathtub-shower-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Showers & Tubs",
+        "owningUrl": "/services/bathtub-shower-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Sinks, Toilets & Faucets",
+        "owningUrl": "/services/toilet-repair-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Sump Pumps Installed & Repaired",
+        "owningUrl": "/services/sump-pump-repair-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Tankless Water Heater - Install",
+        "owningUrl": "/services/tankless-water-heater-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Tankless Water Heater - Repair",
+        "owningUrl": "/services/tankless-water-heater-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Underground Pipe Repairs",
+        "owningUrl": "/services/pipe-repair-replacement/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Heater - Install or Replace",
+        "owningUrl": "/services/water-heater-replacement/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Heater - Repair or Service",
+        "owningUrl": "/services/water-heater-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Heaters - Standard",
+        "owningUrl": "/services/water-heater-replacement/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Heaters - Tankless",
+        "owningUrl": "/services/tankless-water-heater-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Lines Installed & Repaired",
+        "owningUrl": "/services/water-line-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Main - Install, Replace or Repair",
+        "owningUrl": "/services/water-line-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Pressure Problems",
+        "owningUrl": "/services/water-pressure-problems/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Purification & Filters",
+        "owningUrl": "/services/water-treatment-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Treatment & Purification System - Install or Replace",
+        "owningUrl": "/services/water-treatment-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Water Treatment & Purification System - Repair or Service",
+        "owningUrl": "/services/water-treatment-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Well Pump - Install or Replace",
+        "owningUrl": "/services/well-pump-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Well Pump - Repair or Service",
+        "owningUrl": "/services/well-pump-repair/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Well Pumps Installed & Repaired",
+        "owningUrl": "/services/well-pump-installation/",
+        "onThisPreview": true
+      },
+      {
+        "label": "Winterization",
+        "owningUrl": "/services/plumbing-winterization/",
+        "onThisPreview": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Preview only. HTML pages send noindex. Crawling is allowed so that
+# noindex can be seen. This file is not a launch configuration.
