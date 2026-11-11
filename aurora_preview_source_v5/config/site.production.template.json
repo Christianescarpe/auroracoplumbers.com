@@ -17,8 +17,9 @@
     "display": "(XXX) XXX-XXXX"
   },
   "noindex": false,
-  "productionHost": "https://auroracoplumbers.com",
-  "canonicalHost": "https://auroracoplumbers.com",
+  "showPreviewBanner": false,
+  "productionHost": "https://www.auroracoplumbers.com",
+  "canonicalHost": "https://www.auroracoplumbers.com",
   "allowNonLocalCanonical": true,
   "contentDate": "2026-11-11",
   "contentDateLabel": "November 11, 2026",

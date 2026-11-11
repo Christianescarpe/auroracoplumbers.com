@@ -277,6 +277,7 @@ def render(site: dict, page: dict) -> str:
     title = page["title"]
     description = page["description"]
     preview = is_preview_mode(site)
+    show_banner = bool(site.get("showPreviewBanner", preview))
     robots_val = "noindex, follow" if preview else "index, follow"
 
     org = organization_graph(site) if page["path"] == "/" else ""
@@ -287,20 +288,20 @@ def render(site: dict, page: dict) -> str:
         f'  <p class="preview-banner">Unpublished preview of {esc(site["brandName"])}. '
         "Pages ask search engines not to list them. Calls, email, and forms are off, "
         "and a contractor is not dispatched from this site.</p>\n"
-        if preview
+        if show_banner
         else ""
     )
 
-    kicker_text = "Provisional preview" if preview else f'{esc(site["cityName"])}, {esc(site["regionName"])}'
+    kicker_text = "Provisional preview" if show_banner else f'{esc(site["cityName"])}, {esc(site["regionName"])}'
     cta_html = phone_cta_html(site)
-    if preview:
+    if show_banner:
         header_right = '<p class="header-status">Preview · noindex · phone not connected</p>'
     elif cta_html:
         header_right = f'<div class="header-cta">{cta_html}</div>'
     else:
-        header_right = f'<p class="header-status">{esc(site["cityName"])} plumbing guide</p>'
+        header_right = '<p class="header-status">Consumer Plumbing Guide</p>'
 
-    if preview:
+    if show_banner:
         footer_body = (
             f'<p>{esc(site["brandName"])} explains plumbing decisions. It is not a licensed plumbing contractor, '
             "and it does not publish a phone number or a request form in this preview. "

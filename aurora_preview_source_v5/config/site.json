@@ -15,10 +15,11 @@
     "display": null
   },
   "noindex": true,
-  "productionHost": null,
-  "canonicalHost": "http://127.0.0.1:43217",
-  "allowNonLocalCanonical": false,
-  "contentDate": "2026-11-07",
-  "contentDateLabel": "November 7, 2026",
+  "showPreviewBanner": false,
+  "productionHost": "https://www.auroracoplumbers.com",
+  "canonicalHost": "https://www.auroracoplumbers.com",
+  "allowNonLocalCanonical": true,
+  "contentDate": "2026-11-11",
+  "contentDateLabel": "November 11, 2026",
   "port": 43217
 }
