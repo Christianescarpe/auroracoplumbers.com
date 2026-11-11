@@ -14,7 +14,7 @@
    - Broken links `/draft/research-notes/` and `/service-area/` replaced with `/guides/` and `/areas/`.
 
 3. **Hosting, Redirects & SSL (`vercel.json`)**
-   - Primary canonical host configured as apex `https://auroracoplumbers.com` with `www.auroracoplumbers.com` 301/308 permanent redirect.
+   - Vercel Project Domains currently sets `https://www.auroracoplumbers.com` as primary and redirects `auroracoplumbers.com` to `www` (managed in Vercel Dashboard -> Domains; do not duplicate conflicting host redirects in `vercel.json`).
    - Trailing slash and clean URLs enabled; all 9 legacy URL redirects configured (`/sewer-line-repair/`, `/drain-cleaning/`, `/hydro-jetting/`, `/sewer-camera-inspection/`, `/water-heater-replacement/`, `/water-heater-repair/`, `/service-area/`, `/quote-readiness/`, `/draft/research-notes/`).
    - Security headers (`Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy`) active.
    - HTTP 404 status with custom `/404.html` verified.
