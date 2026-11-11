@@ -397,22 +397,51 @@ def checklist(site: dict) -> dict:
     return page
 
 
+def _is_preview(site: dict) -> bool:
+    return bool(site.get("noindex", True))
+
+
+def _phone_button(site: dict, label_prefix: str = "Call ") -> str:
+    phone = site.get("referralPhone") or {}
+    if not (site.get("callsEnabled") and phone.get("live") and phone.get("e164") and phone.get("display")):
+        return ""
+    e164 = esc(phone["e164"])
+    display = esc(phone["display"])
+    return f'<a class="btn-call" href="tel:{e164}" aria-label="Call {display}">{esc(label_prefix)}{display}</a>'
+
+
 def about(site: dict) -> dict:
     brand = esc(site["brandName"])
+    preview = _is_preview(site)
+    intro_note = (
+        "Those facts are not established for this preview, so they are not written."
+        if preview
+        else "Any licensed work is performed strictly by independent contractors you choose to hire."
+    )
+    referral_note = (
+        'A future referral, if one is approved, would introduce you to an independent company under rules that are not set. Read <a href="/how-it-works/">how it works</a>. The <a href="/contact/">contact page</a> explains why there is nothing to submit.'
+        if preview
+        else 'Read <a href="/how-it-works/">how it works</a> or visit the <a href="/contact/">contact page</a> for referral call details.'
+    )
+    desc = (
+        "Aurora Plumbing Guide is a referral publication, not a plumbing contractor. Contact is not open."
+        if preview
+        else "Aurora Plumbing Guide is a consumer plumbing guide for Aurora, Colorado homeowners."
+    )
     body = f"""
     <article class="sheet">
       <p class="eyebrow">Who publishes this</p>
       <h1>About this guide</h1>
       <p class="lede">{brand} is a referral-style publication about plumbing decisions in Aurora, Colorado. It is not a plumbing contractor.</p>
-      <p>The pages name City and Town rules that were read, and they say when a rule was not retrieved or when two documents disagree. They do not invent a crew, a shop, a license number, an insurance certificate, a review score, or years in business. Those facts are not established for this preview, so they are not written.</p>
-      <p>A contractor you hire is the one who diagnoses, pulls the permit, and does the work. This site does not supervise that contractor. A future referral, if one is approved, would introduce you to an independent company under rules that are not set. Read <a href="/how-it-works/">how it works</a>. The <a href="/contact/">contact page</a> explains why there is nothing to submit.</p>
+      <p>The pages name City and Town rules that were read, and they say when a rule was not retrieved or when two documents disagree. They do not invent a crew, a shop, a license number, an insurance certificate, a review score, or years in business. {intro_note}</p>
+      <p>A contractor you hire is the one who diagnoses, pulls the permit, and does the work. This site does not supervise that contractor. {referral_note}</p>
       <p>Content was checked against city pages on {esc(site["contentDateLabel"])}. Codes move. The official page and the inspector outrank this summary.</p>
     </article>
     """
     return _page(
         "/about/",
         "About | Aurora Plumbing Guide",
-        "Aurora Plumbing Guide is a referral publication, not a plumbing contractor. Contact is not open.",
+        desc,
         "About this guide",
         "About",
         "",
@@ -422,12 +451,32 @@ def about(site: dict) -> dict:
 
 
 def how(site: dict) -> dict:
-    del site
-    body = """
+    preview = _is_preview(site)
+    cta = _phone_button(site)
+    phone = site.get("referralPhone") or {}
+    if preview or not cta:
+        eyebrow = "Not switched on"
+        h1 = "How a referral would work"
+        title = "How referral would work | Aurora Plumbing Guide"
+        desc = "What a plumbing referral is, and why this preview does not connect you to a contractor."
+        lede = "You read the decision, then you call. There is no request form. A phone number is the only way a referral would be placed, and that number is not published until routing is confirmed."
+        step3 = "When a number is connected, you would call it. An independent contractor may call you back about that conversation. This preview has no number on the page, no tap-to-call link, and no form to fill out. Geography and hours are not stated because they are not confirmed."
+        cta_block = ""
+    else:
+        eyebrow = "Phone-only referral"
+        h1 = "How a referral works"
+        title = "How a referral works | Aurora Plumbing Guide"
+        desc = "How to connect by phone with an independent plumbing contractor in Aurora, Colorado."
+        lede = "You review the scope and permit rules first, then place a direct phone call. There is no lead form."
+        step3 = f'Call {esc(phone.get("display", ""))} directly to speak with an independent plumbing routing line. There is no web form or email inbox to fill out.'
+        cta_block = f'<div class="call-panel"><h2>Ready to call</h2><p>Speak with the referral routing line directly:</p>{cta}</div>'
+
+    body = f"""
     <article class="sheet">
-      <p class="eyebrow">Not switched on</p>
-      <h1>How a referral would work</h1>
-      <p class="lede">You read the decision, then you call. There is no request form. A phone number is the only way a referral would be placed, and that number is not published until routing is confirmed.</p>
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{h1}</h1>
+      <p class="lede">{lede}</p>
+      {cta_block}
       <ol class="steps">
         <li>
           <h2>You name the scope</h2>
@@ -439,7 +488,7 @@ def how(site: dict) -> dict:
         </li>
         <li>
           <h2>The call is the referral</h2>
-          <p>When a number is connected, you would call it. An independent contractor may call you back about that conversation. This preview has no number on the page, no tap-to-call link, and no form to fill out. Geography and hours are not stated because they are not confirmed.</p>
+          <p>{step3}</p>
         </li>
       </ol>
       <p>Verify the license of anyone you hire with the Colorado agency that issues plumbing licenses. This page does not link a guessed lookup URL. If the property is in <a href="/areas/centennial/">Centennial</a>, <a href="/areas/parker/">Parker</a>, <a href="/areas/highlands-ranch/">Highlands Ranch</a>, or <a href="/areas/castle-rock/">Castle Rock</a>, the permit office changes with the parcel.</p>
@@ -447,9 +496,9 @@ def how(site: dict) -> dict:
     """
     return _page(
         "/how-it-works/",
-        "How referral would work | Aurora Plumbing Guide",
-        "What a plumbing referral is, and why this preview does not connect you to a contractor.",
-        "How a referral would work",
+        title,
+        desc,
+        h1,
         "How it works",
         "",
         "support",
@@ -458,12 +507,16 @@ def how(site: dict) -> dict:
 
 
 def contact(site: dict) -> dict:
-    del site
-    body = """
-    <article class="sheet">
-      <p class="eyebrow">Nothing is accepted</p>
-      <h1>Call is not connected</h1>
-      <p class="lede">A referral from this guide would be a phone call. There is no request form, and the call button is not on the site yet because the number has not been confirmed.</p>
+    preview = _is_preview(site)
+    cta = _phone_button(site)
+    phone = site.get("referralPhone") or {}
+    if preview or not cta:
+        eyebrow = "Nothing is accepted"
+        h1 = "Call is not connected"
+        title = "Contact not enabled | Aurora Plumbing Guide"
+        desc = "No phone number is published. There is no request form. This preview does not place a call."
+        lede = "A referral from this guide would be a phone call. There is no request form, and the call button is not on the site yet because the number has not been confirmed."
+        panel = """
       <div class="disabled-panel">
         <h2>Phone only, not live</h2>
         <dl class="plain-dl">
@@ -474,15 +527,43 @@ def contact(site: dict) -> dict:
           <dt>City phones</dt>
           <dd>Numbers for Aurora Water or a building department are those offices' lines, printed so you can check a rule. They are not this guide, and they are not links.</dd>
         </dl>
-      </div>
+      </div>"""
+    else:
+        eyebrow = "Phone-only referral"
+        h1 = "Call for plumbing service"
+        title = "Contact | Aurora Plumbing Guide"
+        desc = f"Call {phone.get('display', '')} for Aurora plumbing service referrals. No web forms."
+        lede = "Referrals are placed exclusively by phone. There is no web form or email submission."
+        recipient = esc(site.get("callRecipientName") or "participating independent plumbing contractors")
+        panel = f"""
+      <div class="call-panel">
+        <h2>Direct referral line</h2>
+        <p>Tap below to call directly. Calls are routed to {recipient}.</p>
+        {cta}
+        <dl class="plain-dl">
+          <dt>Phone number</dt>
+          <dd>{esc(phone.get("display", ""))}</dd>
+          <dt>Request form</dt>
+          <dd>There is no request form. Nothing is collected or stored on this website.</dd>
+          <dt>City phones</dt>
+          <dd>Numbers for Aurora Water or a building department are those offices' lines, printed so you can verify a rule directly.</dd>
+        </dl>
+      </div>"""
+
+    body = f"""
+    <article class="sheet">
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{h1}</h1>
+      <p class="lede">{lede}</p>
+      {panel}
       <p>The <a href="/guides/plumbing-quote-checklist/">checklist</a> only helps you remember questions. It stays on your device.</p>
     </article>
     """
     return _page(
         "/contact/",
-        "Contact not enabled | Aurora Plumbing Guide",
-        "No phone number is published. There is no request form. This preview does not place a call.",
-        "Call is not connected",
+        title,
+        desc,
+        h1,
         "Contact",
         "",
         "support",
@@ -491,19 +572,33 @@ def contact(site: dict) -> dict:
 
 
 def privacy(site: dict) -> dict:
+    preview = _is_preview(site)
+    phone = site.get("referralPhone") or {}
+    recipient = esc(site.get("callRecipientName") or "participating independent plumbing contractors")
+    if preview or not (site.get("callsEnabled") and phone.get("live")):
+        eyebrow = f"Preview only · {esc(site['contentDateLabel'])}"
+        lede = "This guide does not take a form, an upload, or an email. The only referral path intended later is a phone call, and that number is not on the site."
+        desc = "No request form and no published phone number. The checklist stays in your browser."
+        policy_tail = "A future live number would be shown in one place, the same on every page, and this policy would name who receives the call before that happens."
+    else:
+        eyebrow = f"Updated · {esc(site['contentDateLabel'])}"
+        lede = "This guide does not collect web forms, uploads, or email addresses. The only contact method is a direct phone call."
+        desc = "Privacy policy for Aurora Plumbing Guide. No request forms or browser tracking."
+        policy_tail = f"Published phone calls to {esc(phone.get('display', ''))} are received and handled by {recipient}."
+
     body = f"""
     <article class="sheet">
-      <p class="eyebrow">Preview only · {esc(site["contentDateLabel"])}</p>
+      <p class="eyebrow">{eyebrow}</p>
       <h1>Privacy</h1>
-      <p class="lede">This guide does not take a form, an upload, or an email. The only referral path intended later is a phone call, and that number is not on the site.</p>
-      <p>Pages are static. There is no account and no analytics script. The checklist reads boxes in your browser and writes notes on the page. Those notes are not transmitted. Do not type your name, phone, or address into the checklist. If you later call a published number, that call is between you and whoever answers. This website does not record it.</p>
-      <p>City and town links leave this site and follow those governments' own practices. A future live number would be shown in one place, the same on every page, and this policy would name who receives the call before that happens.</p>
+      <p class="lede">{lede}</p>
+      <p>Pages are static. There is no account and no analytics script. The checklist reads boxes in your browser and writes notes on the page. Those notes are not transmitted. Do not type your name, phone, or address into the checklist. If you call a published number, that call is between you and whoever answers. This website does not record it.</p>
+      <p>City and town links leave this site and follow those governments' own practices. {policy_tail}</p>
     </article>
     """
     return _page(
         "/privacy/",
         "Privacy | Aurora Plumbing Guide",
-        "No request form and no published phone number. The checklist stays in your browser.",
+        desc,
         "Privacy",
         "Privacy",
         "",
@@ -513,20 +608,32 @@ def privacy(site: dict) -> dict:
 
 
 def terms(site: dict) -> dict:
+    preview = _is_preview(site)
+    if preview:
+        eyebrow = f"Preview terms · {esc(site['contentDateLabel'])}"
+        lede = "These terms cover an unpublished draft. They are not a contract for plumbing work and not an offer to refer you to a contractor."
+        desc = "Terms for the Aurora Plumbing Guide preview. Not a bid and not a referral offer."
+        tail = "No request is accepted. No result is guaranteed. No review is published because none are claimed. The local address in the footer of each page is only the preview canonical host. No production domain is attached."
+    else:
+        eyebrow = f"Terms of use · {esc(site['contentDateLabel'])}"
+        lede = "These terms govern use of Aurora Plumbing Guide. This publication is not a plumbing contractor and does not guarantee contractor availability or pricing."
+        desc = "Terms of use for Aurora Plumbing Guide."
+        tail = "No online form request is accepted. No plumbing result or price is guaranteed. No customer review is published."
+
     body = f"""
     <article class="sheet">
-      <p class="eyebrow">Preview terms · {esc(site["contentDateLabel"])}</p>
+      <p class="eyebrow">{eyebrow}</p>
       <h1>Terms</h1>
-      <p class="lede">These terms cover an unpublished draft. They are not a contract for plumbing work and not an offer to refer you to a contractor.</p>
+      <p class="lede">{lede}</p>
       <p>The articles are decision aids. They are not a diagnosis, a permit approval, or a price. Gas, electrical, and excavation hazards are real. Hire someone qualified, or use an owner-builder path only where that building department allows it. This site will not give gas or electrical steps.</p>
       <p>City pages can change after {esc(site["contentDateLabel"])}. If a summary and the official page disagree, follow the official page and the inspector. A mailing city is not a jurisdiction. Parker’s service-line documents are called out as unresolved on purpose.</p>
-      <p>No request is accepted. No result is guaranteed. No review is published because none are claimed. The local address in the footer of each page is only the preview canonical host. No production domain is attached.</p>
+      <p>{tail}</p>
     </article>
     """
     return _page(
         "/terms/",
         "Terms | Aurora Plumbing Guide",
-        "Terms for the Aurora Plumbing Guide preview. Not a bid and not a referral offer.",
+        desc,
         "Terms",
         "Terms",
         "",
@@ -536,11 +643,17 @@ def terms(site: dict) -> dict:
 
 
 def missing(site: dict) -> dict:
-    del site
-    body = """
+    preview = _is_preview(site)
+    h1 = "That page is not in this preview" if preview else "Page not found"
+    desc = (
+        "That address is not a published page in this noindex preview."
+        if preview
+        else "That address does not match a published page on Aurora Plumbing Guide."
+    )
+    body = f"""
     <article class="sheet">
       <p class="eyebrow">404</p>
-      <h1>That page is not in this preview</h1>
+      <h1>{h1}</h1>
       <p class="lede">The address does not match a page that was published. Many city and specialty pages are intentionally absent until their own permit and utility sources are checked.</p>
       <p>Use the <a href="/">home page</a>, the <a href="/services/">repair list</a>, or the <a href="/areas/">cities that are written</a>. Reaching this page did not submit anything.</p>
     </article>
@@ -548,8 +661,8 @@ def missing(site: dict) -> dict:
     return _page(
         "/404.html",
         "Page not found | Aurora Plumbing Guide",
-        "That address is not a published page in this noindex preview.",
-        "That page is not in this preview",
+        desc,
+        h1,
         "Page not found",
         "",
         "support",

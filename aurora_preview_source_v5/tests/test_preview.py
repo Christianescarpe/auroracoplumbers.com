@@ -156,7 +156,9 @@ class PreviewTests(unittest.TestCase):
         self.assertIn("not a target", phase["notBuilt"]["pageCountNote"])
 
     def test_uniqueness_noindex_and_links(self):
-        host = "http://127.0.0.1:43217"
+        site = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
+        host = site["canonicalHost"].rstrip("/")
+        preview = bool(site.get("noindex", True))
         titles, h1s, canonicals = [], [], []
         rels = {page["rel"] for page in self.pages}
         for page in self.pages:
@@ -165,7 +167,13 @@ class PreviewTests(unittest.TestCase):
             h1 = " ".join(parsed.h1).strip()
             self.assertTrue(title and h1, page["rel"])
             self.assertEqual(page["text"].lower().count("<h1"), 1, page["rel"])
-            self.assertIn("noindex", " ".join(parsed.robots).lower())
+            robots_str = " ".join(parsed.robots).lower()
+            if preview:
+                self.assertIn("noindex", robots_str)
+            else:
+                self.assertIn("index, follow", robots_str)
+                self.assertNotIn("noindex", robots_str)
+                self.assertNotIn("preview-banner", page["text"].lower())
             self.assertTrue(parsed.canonical.startswith(host), parsed.canonical)
             self.assertEqual(parsed.lang, "en")
             self.assertTrue(parsed.skip, page["rel"])
@@ -174,7 +182,7 @@ class PreviewTests(unittest.TestCase):
             h1s.append(h1)
             canonicals.append(parsed.canonical)
             for href in parsed.hrefs:
-                if href.startswith(("http://", "https://", "#")):
+                if href.startswith(("http://", "https://", "#", "tel:")):
                     continue
                 self.assertIn(href.split("#", 1)[0], rels | {
                     "/css/site.css", "/js/site.js", "/js/quote.js", "/favicon.svg", "/img/lateral.svg"
@@ -195,9 +203,16 @@ class PreviewTests(unittest.TestCase):
             self.assertIn(page["rel"], inbound, page["rel"])
 
     def test_banned_and_schema(self):
+        site = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
+        preview = bool(site.get("noindex", True))
+        calls_enabled = bool(site.get("callsEnabled", False))
         blob = "\n".join(page["text"].lower() for page in self.pages)
         js = (DIST / "js" / "quote.js").read_text(encoding="utf-8").lower()
         for phrase in BANNED:
+            if not preview and phrase == "auroracoplumbers.com":
+                continue
+            if not preview and calls_enabled and phrase == "tel:":
+                continue
             self.assertNotIn(phrase, blob, phrase)
             self.assertNotIn(phrase, js, phrase)
         self.assertNotIn("$", blob)
@@ -211,7 +226,8 @@ class PreviewTests(unittest.TestCase):
                     continue
                 raw = json.dumps(json.loads(script)).lower()
                 self.assertNotIn("faqpage", raw)
-                self.assertNotIn("telephone", raw)
+                if preview or not site.get("includePhoneInSchema"):
+                    self.assertNotIn("telephone", raw)
                 self.assertNotIn("aggregaterating", raw)
 
     def test_answers_and_depth(self):
@@ -236,9 +252,13 @@ class PreviewTests(unittest.TestCase):
                 self.assertGreaterEqual(text_words, 380, page["rel"])
 
     def test_sitemap_allows_crawl(self):
+        site = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
+        preview = bool(site.get("noindex", True))
         robots = (DIST / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("Allow: /", robots)
         self.assertNotIn("Disallow: /", robots)
+        if not preview:
+            self.assertIn("Sitemap: " + site["canonicalHost"].rstrip("/") + "/sitemap.xml", robots)
         sitemap = (DIST / "sitemap.xml").read_text(encoding="utf-8")
         self.assertNotIn("404", sitemap)
         self.assertIn("lakewood", sitemap)

@@ -111,14 +111,14 @@
     addHeading(briefing, "h3", "Questions to ask");
     addList(briefing, questions);
     addParagraph(briefing, "No dollar figure belongs on this briefing. A real quote has to come from someone who has seen the property and checked the current code.");
-    addParagraph(briefing, "Service articles are not published in this preview. Permit and lateral sources already checked are on the research notes page. Coverage limits are on the service area page.");
+    addParagraph(briefing, "Explore our published plumbing guides for permit and lateral rules, and check our areas directory for municipal coverage.");
 
     var links = document.createElement("p");
     var notes = document.createElement("a");
-    notes.href = "/draft/research-notes/";
-    notes.textContent = "Provisional research notes";
+    notes.href = "/guides/";
+    notes.textContent = "Plumbing guides";
     var area = document.createElement("a");
-    area.href = "/service-area/";
+    area.href = "/areas/";
     area.textContent = "Service area limits";
     links.appendChild(notes);
     links.appendChild(document.createTextNode(" · "));

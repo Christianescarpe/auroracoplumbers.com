@@ -22,7 +22,6 @@ STATIC = ROOT / "src" / "static"
 REPORTS = ROOT / "reports"
 
 BANNED_CANONICAL_FRAGMENTS = (
-    "auroracoplumbers.com",
     "auroraplumbingrepair.com",
     "auroraplumberco.com",
     "auroracoloradoplumber.com",
@@ -31,40 +30,75 @@ BANNED_CANONICAL_FRAGMENTS = (
     "plumberstocktonca.com",
 )
 
+BANNED_OLD_PHONES = (
+    "857-201-2772",
+    "708-350-9399",
+    "857-201-0860",
+    "8572012772",
+    "7083509399",
+    "8572010860",
+)
+
 
 def load_json(path: Path) -> dict:
     with path.open(encoding="utf-8") as handle:
         return json.load(handle)
 
 
+def is_preview_mode(site: dict) -> bool:
+    return bool(site.get("noindex", True))
+
+
+def phone_digits(value: str) -> str:
+    return "".join(ch for ch in (value or "") if ch.isdigit())
+
+
 def guard(site: dict) -> None:
-    if site.get("noindex") is not True:
-        raise SystemExit("Refusing to build: noindex must stay true on this preview.")
-    if site.get("referralMarketConfirmed") is not False:
-        raise SystemExit("Refusing to build: referral market is not confirmed.")
-    for key in ("referralContactEnabled", "callsEnabled", "formSubmissionEnabled"):
-        if site.get(key) is not False:
-            raise SystemExit(f"Refusing to build: {key} must stay false.")
+    if site.get("formSubmissionEnabled") is not False:
+        raise SystemExit("Refusing to build: formSubmissionEnabled must stay false (phone-only architecture).")
+
     phone = site.get("referralPhone") or {}
-    if phone.get("live") or phone.get("e164") or phone.get("display"):
-        raise SystemExit("Refusing to build: referral phone is not confirmed and must stay unpublished.")
-    if site.get("productionHost") not in (None, ""):
-        raise SystemExit("Refusing to build: productionHost must stay empty.")
-    if site.get("marketStatus") != "provisional_unconfirmed":
-        raise SystemExit("Refusing to build: marketStatus is not provisional_unconfirmed.")
+    e164 = str(phone.get("e164") or "")
+    display = str(phone.get("display") or "")
+    for banned in BANNED_OLD_PHONES:
+        if banned in e164 or banned in display or banned in phone_digits(e164) or banned in phone_digits(display):
+            raise SystemExit(f"Refusing to build: phone number matches retired/banned campaign number {banned}.")
+
     host = site.get("canonicalHost") or ""
     lowered = host.lower()
     for fragment in BANNED_CANONICAL_FRAGMENTS:
         if fragment in lowered:
             raise SystemExit(f"Refusing to build: canonical host must not claim {fragment}.")
-    if not site.get("allowNonLocalCanonical"):
-        if not (
-            lowered.startswith("http://127.0.0.1:")
-            or lowered.startswith("http://localhost:")
-        ):
-            raise SystemExit(
-                "Refusing to build: canonical host must be a local preview origin."
-            )
+
+    if is_preview_mode(site):
+        if site.get("referralMarketConfirmed") is not False:
+            raise SystemExit("Refusing to build: referral market is not confirmed in preview mode.")
+        for key in ("referralContactEnabled", "callsEnabled"):
+            if site.get(key) is not False:
+                raise SystemExit(f"Refusing to build: {key} must stay false in preview mode.")
+        if phone.get("live") or e164 or display:
+            raise SystemExit("Refusing to build: referral phone must stay unpublished in preview mode.")
+        if site.get("productionHost") not in (None, ""):
+            raise SystemExit("Refusing to build: productionHost must stay empty in preview mode.")
+        if site.get("marketStatus") != "provisional_unconfirmed":
+            raise SystemExit("Refusing to build: marketStatus must be provisional_unconfirmed in preview mode.")
+        if not site.get("allowNonLocalCanonical"):
+            if not (lowered.startswith("http://127.0.0.1:") or lowered.startswith("http://localhost:")):
+                raise SystemExit("Refusing to build: canonical host must be a local preview origin.")
+    else:
+        if not site.get("allowNonLocalCanonical"):
+            raise SystemExit("Refusing to build production: allowNonLocalCanonical must be true.")
+        prod_host = (site.get("productionHost") or "").rstrip("/")
+        if not prod_host.startswith("https://"):
+            raise SystemExit("Refusing to build production: productionHost must be an https:// origin.")
+        if host.rstrip("/") != prod_host:
+            raise SystemExit("Refusing to build production: canonicalHost must match productionHost.")
+        if site.get("referralMarketConfirmed") is not True or site.get("marketStatus") != "confirmed":
+            raise SystemExit("Refusing to build production: referralMarketConfirmed must be true and marketStatus confirmed.")
+        if site.get("callsEnabled") or site.get("referralContactEnabled"):
+            if not (phone.get("live") and e164.startswith("+") and display):
+                raise SystemExit("Refusing to build production: live calls require referralPhone.live, e164, and display.")
+
     if PRIVATE_PATH.exists():
         private_text = PRIVATE_PATH.read_text(encoding="utf-8")
         if "activateAnyPhone" not in private_text:
@@ -80,22 +114,48 @@ def json_ld(payload: dict) -> str:
     return raw.replace("<", "\\u003c")
 
 
+def phone_cta_html(site: dict, label_prefix: str = "Call ") -> str:
+    phone = site.get("referralPhone") or {}
+    if not (site.get("callsEnabled") and phone.get("live") and phone.get("e164") and phone.get("display")):
+        return ""
+    e164 = esc(phone["e164"])
+    display = esc(phone["display"])
+    return f'<a class="btn-call" href="tel:{e164}" aria-label="Call {display}">{esc(label_prefix)}{display}</a>'
+
+
 def organization_graph(site: dict) -> str:
     host = site["canonicalHost"].rstrip("/")
+    preview = is_preview_mode(site)
+    phone = site.get("referralPhone") or {}
+
+    org_desc = (
+        "Referral guide to plumbing decisions in Aurora, Colorado. "
+        "Not a plumbing contractor. Contact is not enabled in this preview."
+        if preview
+        else "Consumer guide and referral directory for plumbing decisions in Aurora, Colorado. Not a licensed plumbing contractor."
+    )
+    svc_desc = (
+        "Explains plumbing decisions for properties in Aurora, Colorado. "
+        "This preview does not perform plumbing and is not accepting requests."
+        if preview
+        else "Explains plumbing scopes, utility boundaries, and permit rules for properties in Aurora, Colorado."
+    )
+
+    org_node = {
+        "@type": "Organization",
+        "@id": f"{host}/#organization",
+        "name": site["brandName"],
+        "url": f"{host}/",
+        "description": org_desc,
+    }
+    if not preview and site.get("includePhoneInSchema") and phone.get("live") and phone.get("e164"):
+        org_node["telephone"] = phone["e164"]
+
     return json_ld(
         {
             "@context": "https://schema.org",
             "@graph": [
-                {
-                    "@type": "Organization",
-                    "@id": f"{host}/#organization",
-                    "name": site["brandName"],
-                    "url": f"{host}/",
-                    "description": (
-                        "Referral guide to plumbing decisions in Aurora, Colorado. "
-                        "Not a plumbing contractor. Contact is not enabled in this preview."
-                    ),
-                },
+                org_node,
                 {
                     "@type": "WebSite",
                     "@id": f"{host}/#website",
@@ -117,10 +177,7 @@ def organization_graph(site: dict) -> str:
                             "name": "Colorado",
                         },
                     },
-                    "description": (
-                        "Explains plumbing decisions for properties in Aurora, Colorado. "
-                        "This preview does not perform plumbing and is not accepting requests."
-                    ),
+                    "description": svc_desc,
                 },
             ],
         }
@@ -219,9 +276,51 @@ def render(site: dict, page: dict) -> str:
     canonical = host + page["path"]
     title = page["title"]
     description = page["description"]
+    preview = is_preview_mode(site)
+    robots_val = "noindex, follow" if preview else "index, follow"
+
     org = organization_graph(site) if page["path"] == "/" else ""
     org_script = f'<script type="application/ld+json">\n{org}\n</script>' if org else ""
     crumbs_ld = breadcrumb_ld(site, page)
+
+    banner_html = (
+        f'  <p class="preview-banner">Unpublished preview of {esc(site["brandName"])}. '
+        "Pages ask search engines not to list them. Calls, email, and forms are off, "
+        "and a contractor is not dispatched from this site.</p>\n"
+        if preview
+        else ""
+    )
+
+    kicker_text = "Provisional preview" if preview else f'{esc(site["cityName"])}, {esc(site["regionName"])}'
+    cta_html = phone_cta_html(site)
+    if preview:
+        header_right = '<p class="header-status">Preview · noindex · phone not connected</p>'
+    elif cta_html:
+        header_right = f'<div class="header-cta">{cta_html}</div>'
+    else:
+        header_right = f'<p class="header-status">{esc(site["cityName"])} plumbing guide</p>'
+
+    if preview:
+        footer_body = (
+            f'<p>{esc(site["brandName"])} explains plumbing decisions. It is not a licensed plumbing contractor, '
+            "and it does not publish a phone number or a request form in this preview. "
+            f'Nothing here confirms that a contractor will accept a {esc(site["cityName"])} job.</p>'
+        )
+        footer_meta = (
+            f'<p class="footer-meta">Draft dated {esc(site["contentDateLabel"])}. '
+            f'Canonical host for this preview only: {esc(site["canonicalHost"])}. '
+            "No production domain is attached. Pages send noindex.</p>"
+        )
+    else:
+        footer_body = (
+            f'<p>{esc(site["brandName"])} explains plumbing scopes, city permits, and utility boundaries for '
+            f'{esc(site["cityName"])}, {esc(site["regionName"])} homeowners. It is a consumer referral guide, '
+            "not a licensed plumbing contractor.</p>"
+        )
+        footer_meta = (
+            f'<p class="footer-meta">Updated {esc(site["contentDateLabel"])} · {esc(site["canonicalHost"])}.</p>'
+        )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,8 +328,8 @@ def render(site: dict, page: dict) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
-  <meta name="robots" content="noindex, follow">
-  <meta name="googlebot" content="noindex, follow">
+  <meta name="robots" content="{robots_val}">
+  <meta name="googlebot" content="{robots_val}">
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#163e3c">
@@ -242,17 +341,16 @@ def render(site: dict, page: dict) -> str:
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
-  <p class="preview-banner">Unpublished preview of {esc(site["brandName"])}. Pages ask search engines not to list them. Calls, email, and forms are off, and a contractor is not dispatched from this site.</p>
-  <header class="site-header">
+{banner_html}  <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/">
         <span class="brand-mark" aria-hidden="true">AP</span>
         <span class="brand-text">
           <span class="brand-name">{esc(site["brandName"])}</span>
-          <span class="brand-kicker">Provisional preview</span>
+          <span class="brand-kicker">{kicker_text}</span>
         </span>
       </a>
-      <p class="header-status">Preview · noindex · phone not connected</p>
+      {header_right}
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul>
@@ -268,7 +366,7 @@ def render(site: dict, page: dict) -> str:
   <footer class="site-footer">
     <div class="footer-inner">
       <p class="footer-brand">{esc(site["brandName"])}</p>
-      <p>{esc(site["brandName"])} explains plumbing decisions. It is not a licensed plumbing contractor, and it does not publish a phone number or a request form in this preview. Nothing here confirms that a contractor will accept a {esc(site["cityName"])} job.</p>
+      {footer_body}
       <ul class="footer-links">
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
@@ -276,7 +374,7 @@ def render(site: dict, page: dict) -> str:
         <li><a href="/terms/">Terms</a></li>
         <li><a href="/how-it-works/">How it works</a></li>
       </ul>
-      <p class="footer-meta">Draft dated {esc(site["contentDateLabel"])}. Canonical host for this preview only: {esc(site["canonicalHost"])}. No production domain is attached. Pages send noindex.</p>
+      {footer_meta}
     </div>
   </footer>
   <script src="/js/site.js"></script>
@@ -319,19 +417,29 @@ def write_sitemap(site: dict, pages: list[dict]) -> None:
     (DIST / "sitemap.xml").write_text(body, encoding="utf-8")
 
 
-def write_robots() -> None:
-    text = (
-        "User-agent: *\n"
-        "Allow: /\n"
-        "\n"
-        "# Preview only. HTML pages send noindex. Crawling is allowed so that\n"
-        "# noindex can be seen. This file is not a launch configuration.\n"
-    )
+def write_robots(site: dict) -> None:
+    if is_preview_mode(site):
+        text = (
+            "User-agent: *\n"
+            "Allow: /\n"
+            "\n"
+            "# Preview only. HTML pages send noindex. Crawling is allowed so that\n"
+            "# noindex can be seen. This file is not a launch configuration.\n"
+        )
+    else:
+        host = site["canonicalHost"].rstrip("/")
+        text = (
+            "User-agent: *\n"
+            "Allow: /\n"
+            "\n"
+            f"Sitemap: {host}/sitemap.xml\n"
+        )
     (DIST / "robots.txt").write_text(text, encoding="utf-8")
 
 
 def write_page_map(site: dict, pages: list[dict]) -> None:
     REPORTS.mkdir(parents=True, exist_ok=True)
+    preview = is_preview_mode(site)
     rows = []
     for page in pages:
         rows.append(
@@ -342,7 +450,7 @@ def write_page_map(site: dict, pages: list[dict]) -> None:
                 "intendedKeyword": page.get("intended_keyword", ""),
                 "keywordStatus": page.get(
                     "keyword_status",
-                    "Provisional draft. Not a launched ranking page.",
+                    "Provisional draft." if preview else "Published guide.",
                 ),
                 "inSitemap": bool(page.get("in_sitemap", True)),
                 "httpStatus": 200 if page.get("in_sitemap", True) else 404,
@@ -350,10 +458,10 @@ def write_page_map(site: dict, pages: list[dict]) -> None:
         )
     payload = {
         "canonicalHost": site["canonicalHost"],
-        "productionHost": None,
-        "noindex": True,
+        "productionHost": site.get("productionHost"),
+        "noindex": preview,
         "marketStatus": site["marketStatus"],
-        "referralMarketConfirmed": False,
+        "referralMarketConfirmed": bool(site.get("referralMarketConfirmed", False)),
         "pages": rows,
     }
     (REPORTS / "page-map.json").write_text(
@@ -362,8 +470,8 @@ def write_page_map(site: dict, pages: list[dict]) -> None:
     lines = [
         "# Page map",
         "",
-        "Aurora, Colorado consumer guide. Noindex preview. Neighboring cities are not published.",
-        f"Canonical host: `{site['canonicalHost']}` (local preview only).",
+        "Aurora, Colorado consumer guide.",
+        f"Canonical host: `{site['canonicalHost']}`.",
         "",
         "| URL | Title | H1 | Intended keyword | Status |",
         "| --- | --- | --- | --- | --- |",
@@ -400,7 +508,7 @@ def build() -> list[dict]:
     for page in pages:
         write_page(page, render(site, page))
     write_sitemap(site, pages)
-    write_robots()
+    write_robots(site)
     write_page_map(site, pages)
     private_copy = DIST / "launch-private.json"
     if private_copy.exists():

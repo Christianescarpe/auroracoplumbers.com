@@ -2,6 +2,109 @@
   "outputDirectory": "aurora_preview_dist_v5",
   "cleanUrls": true,
   "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.auroracoplumbers.com"
+        }
+      ],
+      "destination": "https://auroracoplumbers.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/sewer-line-repair",
+      "destination": "/services/sewer-line-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/sewer-line-repair/",
+      "destination": "/services/sewer-line-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/drain-cleaning",
+      "destination": "/services/drain-cleaning/",
+      "permanent": true
+    },
+    {
+      "source": "/drain-cleaning/",
+      "destination": "/services/drain-cleaning/",
+      "permanent": true
+    },
+    {
+      "source": "/hydro-jetting",
+      "destination": "/services/hydro-jetting/",
+      "permanent": true
+    },
+    {
+      "source": "/hydro-jetting/",
+      "destination": "/services/hydro-jetting/",
+      "permanent": true
+    },
+    {
+      "source": "/sewer-camera-inspection",
+      "destination": "/services/sewer-camera-inspection/",
+      "permanent": true
+    },
+    {
+      "source": "/sewer-camera-inspection/",
+      "destination": "/services/sewer-camera-inspection/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-replacement",
+      "destination": "/services/water-heater-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-replacement/",
+      "destination": "/services/water-heater-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-repair",
+      "destination": "/services/water-heater-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/water-heater-repair/",
+      "destination": "/services/water-heater-repair/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area",
+      "destination": "/areas/",
+      "permanent": true
+    },
+    {
+      "source": "/service-area/",
+      "destination": "/areas/",
+      "permanent": true
+    },
+    {
+      "source": "/quote-readiness",
+      "destination": "/guides/plumbing-quote-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/quote-readiness/",
+      "destination": "/guides/plumbing-quote-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/draft/research-notes",
+      "destination": "/guides/",
+      "permanent": true
+    },
+    {
+      "source": "/draft/research-notes/",
+      "destination": "/guides/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -9,6 +112,18 @@
         {
           "key": "X-Robots-Tag",
           "value": "noindex, follow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
         }
       ]
     }

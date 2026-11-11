@@ -761,3 +761,58 @@ h3 {
   height: 220px;
 }
 
+/* ==========================================================================
+   Launch-Ready Phone Call CTA Components
+   ========================================================================== */
+.header-cta {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1.25rem;
+  border-radius: 999px;
+  background: var(--copper);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.98rem;
+  text-decoration: none;
+  border: 2px solid var(--copper);
+  box-shadow: 0 4px 12px rgba(141, 67, 44, 0.22);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-call:hover {
+  background: var(--deep);
+  border-color: var(--deep);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.call-panel {
+  background: #f7f1e6;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--copper);
+  border-radius: 0.95rem;
+  padding: 1.25rem 1.4rem;
+  margin: 1.4rem 0;
+}
+
+.call-panel h2 {
+  margin-top: 0;
+}
+
+.call-panel .btn-call {
+  margin-top: 0.75rem;
+  font-size: 1.08rem;
+  padding: 0.7rem 1.6rem;
+}
+
+

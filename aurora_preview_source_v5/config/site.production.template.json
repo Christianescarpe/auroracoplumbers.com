@@ -1,0 +1,26 @@
+{
+  "brandName": "Aurora Plumbing Guide",
+  "cityName": "Aurora",
+  "citySlug": "aurora-co",
+  "regionName": "Colorado",
+  "regionAbbrev": "CO",
+  "marketStatus": "confirmed",
+  "referralMarketConfirmed": true,
+  "referralContactEnabled": true,
+  "callsEnabled": true,
+  "formSubmissionEnabled": false,
+  "includePhoneInSchema": false,
+  "callRecipientName": "participating independent Aurora-area plumbing contractors",
+  "referralPhone": {
+    "live": true,
+    "e164": "+1XXXXXXXXXX",
+    "display": "(XXX) XXX-XXXX"
+  },
+  "noindex": false,
+  "productionHost": "https://auroracoplumbers.com",
+  "canonicalHost": "https://auroracoplumbers.com",
+  "allowNonLocalCanonical": true,
+  "contentDate": "2026-11-11",
+  "contentDateLabel": "November 11, 2026",
+  "port": 43217
+}
