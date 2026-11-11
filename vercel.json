@@ -4,17 +4,6 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.auroracoplumbers.com"
-        }
-      ],
-      "destination": "https://auroracoplumbers.com/$1",
-      "permanent": true
-    },
-    {
       "source": "/sewer-line-repair",
       "destination": "/services/sewer-line-repair/",
       "permanent": true
