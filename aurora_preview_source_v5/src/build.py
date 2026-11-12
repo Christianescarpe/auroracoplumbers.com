@@ -356,11 +356,7 @@ def render(site: dict, page: dict) -> str:
 {banner_html}  <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="/">
-        <span class="brand-mark" aria-hidden="true">AP</span>
-        <span class="brand-text">
-          <span class="brand-name">{esc(site["brandName"])}</span>
-          <span class="brand-kicker">{kicker_text}</span>
-        </span>
+        <img class="brand-logo" src="/img/plumber-aurora-logo.png" alt="Plumber Aurora CO — {esc(site["brandName"])}" width="360" height="199" loading="eager" decoding="async">
       </a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
@@ -385,7 +381,7 @@ def render(site: dict, page: dict) -> str:
       <div class="footer-grid">
         <div>
           <div class="footer-brand-row">
-            <span class="brand-mark" aria-hidden="true">AP</span>
+            <span class="footer-logo-mark" aria-hidden="true"></span>
             <p class="footer-brand">{esc(site["brandName"])}</p>
           </div>
           {footer_body}
