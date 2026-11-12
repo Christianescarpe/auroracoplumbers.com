@@ -31,7 +31,7 @@ def home(site: dict) -> dict:
           <a class="circle-arrow" href="/services/" aria-label="Browse all plumbing repair scopes">&rarr;</a>
         </div>
         <div class="bento-thumb">
-          <img src="/img/copper-pipes-wrench-repair.jpg" alt="Copper supply lines and wrench fitting in mechanical space" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/img/copper-pipes-wrench-repair.jpg" alt="Copper supply lines and wrench fitting in mechanical space" width="400" height="300" loading="eager" decoding="async">
         </div>
         <div class="bento-info-card">
           <p>Aurora Plumbing Guide shows homeowners what to ask an independent licensed contractor. It does not employ crews, pull permits, or dispatch a truck.</p>
@@ -47,7 +47,7 @@ def home(site: dict) -> dict:
         <p class="band-sub">Separate indoor fixture repairs from permitted tank swaps and lateral excavation before signing any estimate across Aurora and the Front Range.</p>
       </div>
       <div class="showcase-banner-wrap">
-        <img src="/img/hero-construction-pipes.jpg" alt="Residential plumbing piping and main supply installation" width="1200" height="525" loading="lazy" decoding="async">
+        <img src="/img/hero-construction-pipes.jpg" alt="Residential plumbing piping and main supply installation" width="1200" height="525" loading="eager" decoding="async">
       </div>
       <div class="stats-strip">
         <div class="stat-item"><div class="stat-figure">37</div><div class="stat-caption">Distinct Residential<br>Plumbing Scopes</div></div>
@@ -87,10 +87,10 @@ def home(site: dict) -> dict:
         <p class="band-sub">Explore dedicated repair and replacement pages across heating, supply piping, drainage, and fixture assemblies.</p>
       </div>
       <div class="photo-card-grid">
-        <a class="photo-card" href="/services/water-heater-replacement/"><div><h3>Water Heaters</h3><p>Permit expectations, same-day inspection limits, and tank swap quote items.</p></div><div class="photo-card-media"><img src="/img/water-filtration-system-install.jpg" alt="Residential utility room water heater and filtration setup" width="600" height="450" loading="lazy" decoding="async"></div></a>
-        <a class="photo-card" href="/services/leak-detection/"><div><h3>Leak Detection</h3><p>A sewer camera cannot see a pressurized supply line. Isolate leaks before slab cuts.</p></div><div class="photo-card-media"><img src="/img/pipe-leak-pliers-under-sink.jpg" alt="Plumber isolating pipe joint leak under residential sink" width="600" height="450" loading="lazy" decoding="async"></div></a>
-        <a class="photo-card" href="/services/faucet-sink-fixture-repair/"><div><h3>Fixtures &amp; Valves</h3><p>Separate simple faucet, toilet, or disposal repairs from concealed wall piping damage.</p></div><div class="photo-card-media"><img src="/img/bathroom-sink-faucet-plumbing.jpg" alt="Bathroom sink faucet and chrome supply plumbing assembly" width="600" height="450" loading="lazy" decoding="async"></div></a>
-        <a class="photo-card" href="/services/whole-house-repiping/"><div><h3>Supply Repiping</h3><p>Compare spot pipe repair against full-house supply replacement when pressure drops.</p></div><div class="photo-card-media"><img src="/img/plumbing-equipment-fittings-layout.jpg" alt="Plumbing shutoff valves, fittings, and manifold equipment layout" width="600" height="450" loading="lazy" decoding="async"></div></a>
+        <a class="photo-card" href="/services/water-heater-replacement/"><div><h3>Water Heaters</h3><p>Permit expectations, same-day inspection limits, and tank swap quote items.</p></div><div class="photo-card-media"><img src="/img/water-filtration-system-install.jpg" alt="Residential utility room water heater and filtration setup" width="600" height="450" loading="eager" decoding="async"></div></a>
+        <a class="photo-card" href="/services/leak-detection/"><div><h3>Leak Detection</h3><p>A sewer camera cannot see a pressurized supply line. Isolate leaks before slab cuts.</p></div><div class="photo-card-media"><img src="/img/pipe-leak-pliers-under-sink.jpg" alt="Plumber isolating pipe joint leak under residential sink" width="600" height="450" loading="eager" decoding="async"></div></a>
+        <a class="photo-card" href="/services/faucet-sink-fixture-repair/"><div><h3>Fixtures &amp; Valves</h3><p>Separate simple faucet, toilet, or disposal repairs from concealed wall piping damage.</p></div><div class="photo-card-media"><img src="/img/bathroom-sink-faucet-plumbing.jpg" alt="Bathroom sink faucet and chrome supply plumbing assembly" width="600" height="450" loading="eager" decoding="async"></div></a>
+        <a class="photo-card" href="/services/whole-house-repiping/"><div><h3>Supply Repiping</h3><p>Compare spot pipe repair against full-house supply replacement when pressure drops.</p></div><div class="photo-card-media"><img src="/img/plumbing-equipment-fittings-layout.jpg" alt="Plumbing shutoff valves, fittings, and manifold equipment layout" width="600" height="450" loading="eager" decoding="async"></div></a>
       </div>
     </section>
 
@@ -107,8 +107,8 @@ def home(site: dict) -> dict:
           </div>
         </div>
         <div class="stacked-photos">
-          <div class="stacked-photo-box"><img src="/img/industrial-utility-pipe-service.jpg" alt="Commercial and residential utility pipe servicing equipment" width="800" height="450" loading="lazy" decoding="async"></div>
-          <div class="stacked-photo-box"><img src="/img/pipe-adjustment-wrench-service.jpg" alt="Plumber adjusting water and gas pipe fittings with wrench" width="800" height="450" loading="lazy" decoding="async"></div>
+          <div class="stacked-photo-box"><img src="/img/industrial-utility-pipe-service.jpg" alt="Commercial and residential utility pipe servicing equipment" width="800" height="450" loading="eager" decoding="async"></div>
+          <div class="stacked-photo-box"><img src="/img/pipe-adjustment-wrench-service.jpg" alt="Plumber adjusting water and gas pipe fittings with wrench" width="800" height="450" loading="eager" decoding="async"></div>
         </div>
       </div>
     </section>
@@ -128,7 +128,7 @@ def home(site: dict) -> dict:
         </div>
         <div id="workflow-panel" class="workflow-panel">
           <div><h3 data-wf-title>Compare Scopes With the Quote Checklist</h3><p data-wf-body>When you are ready to compare written quotes, use the checklist. It stays in your browser, asks for no name or address, and outputs no guessed pricing.</p></div>
-          <div class="workflow-panel-media"><img data-wf-img src="/img/kitchen-sink-plumbing-tools.jpg" alt="Kitchen sink drain and plumbing service tools" width="800" height="400" loading="lazy" decoding="async"></div>
+          <div class="workflow-panel-media"><img data-wf-img src="/img/kitchen-sink-plumbing-tools.jpg" alt="Kitchen sink drain and plumbing service tools" width="800" height="400" loading="eager" decoding="async"></div>
           <div><a class="btn-outline" data-wf-link href="/guides/plumbing-quote-checklist/">Open Quote Checklist &rarr;</a><div class="workflow-quick-links"><a href="/areas/centennial/">Centennial</a><a href="/areas/parker/">Parker</a><a href="/areas/highlands-ranch/">Highlands Ranch</a><a href="/areas/castle-rock/">Castle Rock</a><a href="/areas/">All 45 Areas</a></div></div>
         </div>
       </div>
@@ -143,10 +143,10 @@ def home(site: dict) -> dict:
       <div class="spotlight-grid">
         <div class="spotlight-main">
           <div><div class="spotlight-num">01</div><h3>How a Plumbing Referral Works Here</h3><p>This website is an independent consumer plumbing guide. It does not hold a plumbing license, employ crews, or accept web forms. Learn how scope preparation works before live call routing is connected.</p><a class="btn-primary" href="/how-it-works/">Read How It Works &rarr;</a></div>
-          <div class="spotlight-photo"><img src="/img/repairman-fixing-pipes-wrench.jpg" alt="Plumber working with wrench on residential water piping" width="600" height="450" loading="lazy" decoding="async"></div>
+          <div class="spotlight-photo"><img src="/img/repairman-fixing-pipes-wrench.jpg" alt="Plumber working with wrench on residential water piping" width="600" height="450" loading="eager" decoding="async"></div>
         </div>
-        <a class="spotlight-side" href="/guides/aurora-sewer-camera-second-opinion/"><div><div class="spotlight-side-num">02</div><div class="spotlight-side-label">Camera Review</div></div><div class="spotlight-side-photo"><img src="/img/home-bathroom-sink-drain.jpg" alt="Drain assembly inspection inside home bathroom" width="360" height="480" loading="lazy" decoding="async"></div></a>
-        <a class="spotlight-side" href="/areas/"><div><div class="spotlight-side-num">03</div><div class="spotlight-side-label">Nearby Cities</div></div><div class="spotlight-side-photo"><img src="/img/modern-bathroom-sink-plumbing.jpg" alt="Finished bathroom plumbing fixtures and drain setup" width="360" height="480" loading="lazy" decoding="async"></div></a>
+        <a class="spotlight-side" href="/guides/aurora-sewer-camera-second-opinion/"><div><div class="spotlight-side-num">02</div><div class="spotlight-side-label">Camera Review</div></div><div class="spotlight-side-photo"><img src="/img/home-bathroom-sink-drain.jpg" alt="Drain assembly inspection inside home bathroom" width="360" height="480" loading="eager" decoding="async"></div></a>
+        <a class="spotlight-side" href="/areas/"><div><div class="spotlight-side-num">03</div><div class="spotlight-side-label">Nearby Cities</div></div><div class="spotlight-side-photo"><img src="/img/modern-bathroom-sink-plumbing.jpg" alt="Finished bathroom plumbing fixtures and drain setup" width="360" height="480" loading="eager" decoding="async"></div></a>
       </div>
     </section>
 
