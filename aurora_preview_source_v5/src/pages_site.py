@@ -6,7 +6,14 @@ from markup import INSPECT, PERMIT, esc, qas
 def home(site: dict) -> dict:
     del site
     body = """
-    <section class="landing-band" aria-labelledby="hero-title">
+    <section class="landing-band hero-has-slider" aria-labelledby="hero-title">
+      <div class="hero-bg-slider" aria-hidden="true">
+        <div class="hero-bg-slide is-active" style="background-image: url('/img/drain-repair-technician.webp');"></div>
+        <div class="hero-bg-slide" data-bg="/img/hero-slide-fittings.jpg"></div>
+        <div class="hero-bg-slide" data-bg="/img/hero-slide-installation.jpg"></div>
+        <div class="hero-bg-slide" data-bg="/img/hero-fixtures.webp"></div>
+      </div>
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
       <div class="hero-split">
         <div class="hero-copy-col">
           <p class="eyebrow">Aurora, Colorado &middot; Consumer Plumbing Guide</p>
@@ -37,6 +44,16 @@ def home(site: dict) -> dict:
           <p>Aurora Plumbing Guide shows homeowners what to ask an independent licensed contractor. It does not employ crews, pull permits, or dispatch a truck.</p>
           <a class="inline-arrow-link" href="/about/">How This Guide Is Verified &rarr;</a>
         </div>
+      </div>
+      <div class="hero-slider-controls" role="region" aria-label="Hero background image slider controls">
+        <button type="button" class="hero-slider-arrow" data-hero-prev aria-label="Previous hero background image">&lsaquo;</button>
+        <div class="hero-slider-dots">
+          <button type="button" class="hero-slider-dot is-active" aria-label="Slide 1" aria-pressed="true"></button>
+          <button type="button" class="hero-slider-dot" aria-label="Slide 2" aria-pressed="false"></button>
+          <button type="button" class="hero-slider-dot" aria-label="Slide 3" aria-pressed="false"></button>
+          <button type="button" class="hero-slider-dot" aria-label="Slide 4" aria-pressed="false"></button>
+        </div>
+        <button type="button" class="hero-slider-arrow" data-hero-next aria-label="Next hero background image">&rsaquo;</button>
       </div>
     </section>
 
