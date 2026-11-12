@@ -303,7 +303,7 @@ def render(site: dict, page: dict) -> str:
 
     if show_banner:
         footer_body = (
-            f'<p>{esc(site["brandName"])} explains plumbing decisions. It is not a licensed plumbing contractor, '
+            f'<p class="footer-about">{esc(site["brandName"])} explains plumbing decisions. It is not a licensed plumbing contractor, '
             "and it does not publish a phone number or a request form in this preview. "
             f'Nothing here confirms that a contractor will accept a {esc(site["cityName"])} job.</p>'
         )
@@ -314,13 +314,21 @@ def render(site: dict, page: dict) -> str:
         )
     else:
         footer_body = (
-            f'<p>{esc(site["brandName"])} explains plumbing scopes, city permits, and utility boundaries for '
-            f'{esc(site["cityName"])}, {esc(site["regionName"])} homeowners. It is a consumer referral guide, '
+            f'<p class="footer-about">{esc(site["brandName"])} explains plumbing scopes, city permits, and utility boundaries for '
+            f'{esc(site["cityName"])}, {esc(site["regionName"])} homeowners. It is a consumer plumbing guide, '
             "not a licensed plumbing contractor.</p>"
         )
         footer_meta = (
-            f'<p class="footer-meta">Updated {esc(site["contentDateLabel"])} · {esc(site["canonicalHost"])}.</p>'
+            f'<p class="footer-meta">Updated {esc(site["contentDateLabel"])} · {esc(site["canonicalHost"])}</p>'
         )
+
+    main_class = "site-main is-landing" if page["path"] == "/" else "site-main"
+    crumbs_block = "" if page["path"] == "/" else f"{crumbs_html(page)}\n    "
+    header_cta_link = (
+        f'<div class="header-cta">{cta_html}</div>'
+        if (not show_banner and cta_html)
+        else '<a class="header-action" href="/contact/">Contact &rarr;</a>'
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -333,7 +341,10 @@ def render(site: dict, page: dict) -> str:
   <meta name="googlebot" content="{robots_val}">
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#163e3c">
+  <meta name="theme-color" content="#121212">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/site.css">
   {org_script}
   <script type="application/ld+json">
@@ -351,31 +362,66 @@ def render(site: dict, page: dict) -> str:
           <span class="brand-kicker">{kicker_text}</span>
         </span>
       </a>
-      {header_right}
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <ul>
           {nav_html(site, page)}
         </ul>
       </nav>
+      {header_cta_link}
     </div>
   </header>
-  <main id="content" class="site-main">
-    {crumbs_html(page)}
-    {page["body"]}
+  <main id="content" class="{main_class}">
+    {crumbs_block}{page["body"]}
   </main>
+  <section class="pre-footer" aria-label="Prepare before calling">
+    <div class="pre-footer-inner">
+      <h2>Compare Plumbing Scopes Before Calling a Contractor</h2>
+      <a class="btn-primary" href="/guides/plumbing-quote-checklist/">Open Quote Checklist &rarr;</a>
+    </div>
+  </section>
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="footer-brand">{esc(site["brandName"])}</p>
-      {footer_body}
-      <ul class="footer-links">
-        <li><a href="/about/">About</a></li>
-        <li><a href="/contact/">Contact</a></li>
-        <li><a href="/privacy/">Privacy</a></li>
-        <li><a href="/terms/">Terms</a></li>
-        <li><a href="/how-it-works/">How it works</a></li>
-      </ul>
-      {footer_meta}
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-row">
+            <span class="brand-mark" aria-hidden="true">AP</span>
+            <p class="footer-brand">{esc(site["brandName"])}</p>
+          </div>
+          {footer_body}
+        </div>
+        <div>
+          <p class="footer-col-title">Directory</p>
+          <ul class="footer-links">
+            <li><a href="/services/">Repair Services</a></li>
+            <li><a href="/guides/">Decision Guides</a></li>
+            <li><a href="/areas/">Nearby Cities</a></li>
+            <li><a href="/how-it-works/">How It Works</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Information</p>
+          <ul class="footer-links">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/privacy/">Privacy</a></li>
+            <li><a href="/terms/">Terms</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-col-title">Scope Checklist</p>
+          <p class="footer-cta-note">Generate a private list of permit and quote questions in your browser before speaking with any contractor.</p>
+          <a class="btn-outline" href="/guides/plumbing-quote-checklist/">Launch Checklist &rarr;</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        {footer_meta}
+        <div class="footer-legal-links">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Use</a>
+          <a href="/about/">About</a>
+        </div>
+      </div>
     </div>
   </footer>
   <script src="/js/site.js"></script>

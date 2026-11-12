@@ -4,56 +4,168 @@ from markup import INSPECT, PERMIT, esc, qas
 
 
 def home(site: dict) -> dict:
-    city = esc(site["cityName"])
-    body = f"""
-    <article class="sheet">
-      <p class="eyebrow">Aurora, Colorado · referral guide</p>
-      <h1>Plumber Aurora CO</h1>
-      <p class="lede">Name the problem first. A slow sink, a wet tank, and sewage in the basement are different jobs, and in Aurora they are not the same pipe. {esc(site["brandName"])} shows what to ask a contractor. It does not send one.</p>
-      <h2>What kind of problem is it</h2>
-      <div class="card-grid">
-        <a class="job-card" href="/services/water-heater-repair/"><span class="job-kicker">Hot water</span><strong>No hot water or a wet tank</strong><span>The tank you have may still be repairable. A new tank is a permit, and the City may not inspect it today.</span></a>
-        <a class="job-card" href="/services/tankless-water-heater-installation/"><span class="job-kicker">Hot water</span><strong>Switching to tankless</strong><span>That is a new vent and a new gas or electrical load, not a thinner tank.</span></a>
-        <a class="job-card" href="/services/drain-cleaning/"><span class="job-kicker">Drains</span><strong>One slow sink</strong><span>Start with a clog. If the lowest drain fills with sewage, the service line may be yours to the tap.</span></a>
-        <a class="job-card" href="/services/sewer-line-repair/"><span class="job-kicker">Sewer</span><strong>Backup or a broken line</strong><span>Aurora Water keeps the main. You keep the line from the building through the tap, including the street patch.</span></a>
-        <a class="job-card" href="/services/leak-detection/"><span class="job-kicker">Supply</span><strong>A leak you cannot see</strong><span>A sewer camera cannot see a water line. Find the leak before anyone cuts the street.</span></a>
-        <a class="job-card" href="/services/faucet-sink-fixture-repair/"><span class="job-kicker">Fixtures</span><strong>Drip, running toilet, disposal</strong><span>A faucet or toilet is usually a small repair. Water in the wall is a different page.</span></a>
+    del site
+    body = """
+    <section class="landing-band" aria-labelledby="hero-title">
+      <div class="hero-split">
+        <div class="hero-copy-col">
+          <p class="eyebrow">Aurora, Colorado &middot; Consumer Plumbing Guide</p>
+          <h1 id="hero-title">Plumber Aurora CO</h1>
+          <p class="hero-subheadline">Name the pipe &amp; permit scope before you hire</p>
+          <p class="lede">A slow sink, a wet tank, and sewage in the basement are different jobs, and in Aurora they are not the same pipe. Compare local scopes, utility boundaries, and inspection rules before requesting a contractor quote.</p>
+          <div class="btn-row">
+            <a class="btn-primary" href="/services/">Which repair &rarr;</a>
+            <a class="btn-outline" href="/guides/plumbing-quote-checklist/">Quote checklist &rarr;</a>
+          </div>
+        </div>
+        <div class="hero-photo-frame">
+          <img src="/img/hero-plumber-inspection.jpg" alt="Plumber inspecting residential pipe fittings and water supply lines" width="800" height="600" loading="eager" decoding="async">
+        </div>
       </div>
-      <h2>Three Aurora facts that move the price</h2>
-      <p>Aurora Water keeps the sewer main and the manholes. You keep the service line from the tap to the building, including the tee or saddle and the street repair if your work disturbs it. That is not the rule in every nearby town. Read <a href="/guides/aurora-sewer-line-responsibility/">who owns the line</a> before you accept "the city will get it."</p>
-      <p>If a plumber videos that line, Aurora residents can ask the City for a free second look. The how-to is the <a href="/guides/aurora-sewer-camera-second-opinion/">camera review guide</a>. We do not upload the file.</p>
-      <p>A licensed contractor can ask for a same-day inspection on a replacement water heater when you and the contractor are both there. The City may still come another day. Details are on the <a href="/guides/aurora-water-heater-permits/">permit guide</a>.</p>
-      <h2>If the house is not in Aurora</h2>
-      <p>These Aurora rules stop at the city limit. <a href="/areas/centennial/">Centennial</a> does not supply water or sewer. <a href="/areas/parker/">Parker</a> permits inside the town, and the district's service-line boundary is not settled on this site. <a href="/areas/highlands-ranch/">Highlands Ranch</a> is unincorporated Douglas County. <a href="/areas/castle-rock/">Castle Rock</a> wants gas-load math for a tankless heater. The <a href="/areas/">areas list</a> is short on purpose. Most towns inside 50 miles are not written up, because their utilities have not been checked. A straight-line radius is not a promise that anyone will take the job.</p>
-      <p>When you are ready to compare scopes, use the <a href="/guides/plumbing-quote-checklist/">quote checklist</a>. It stays in your browser. It does not ask for your name, and it does not produce a price. How a referral would work, once a route exists, is on <a href="/how-it-works/">how it works</a>. It does not exist on this preview.</p>
-      {qas([
-        (
-            "Are you the plumber?",
-            "No. This is a referral-style guide. It does not hold a plumbing license, employ a crew, or dispatch a truck. The pages tell you what to ask an independent contractor. Calls, email, and forms are turned off until a real destination exists. Nothing you read here books a visit.",
-        ),
-        (
-            "Does Aurora Water own the sewer from the house to the main?",
-            "No. The City's wastewater page says you maintain the service line from the sewer tap to the building, including the connection and related street damage. Aurora Water maintains the city main and the manholes. A backup in a floor drain can still be yours. Get a camera before you assign the bill.",
-        ),
-        (
-            "Will the City inspect a new water heater today?",
-            "Not as a promise. A licensed contractor may request a same-day inspection when you can both be there. The City says it may inspect on another day if the schedule is full. Ask the contractor to make the request. Do not sign a quote that treats same-day approval as guaranteed.",
-        ),
-        (
-            "Does Aurora's sewer rule apply in the next town?",
-            "No. Denver keeps the lateral through the tap on the owner and uses its own quick permit. Lakewood's sewer drawing is only the city's north-side customers. A mailing city is not the permit office. Use the nearby-cities list for the parcel you actually have, and do not carry Aurora's tap rule across the line.",
-        ),
-        (
-            "Can I send you the sewer video?",
-            "No. Aurora Water accepts resident video at the address on the City's wastewater page. This website has no upload and no inbox. The second-opinion guide lists what the recording should show so the City's review is useful. We are not the City.",
-        ),
-      ])}
-    </article>
+      <div class="hero-bento">
+        <div class="bento-stat-card">
+          <div>
+            <div class="bento-stat-num">37<span>+</span></div>
+            <div class="bento-stat-label">Service Scopes &amp; Decision Guides</div>
+          </div>
+          <a class="circle-arrow" href="/services/" aria-label="Browse all plumbing repair scopes">&rarr;</a>
+        </div>
+        <div class="bento-thumb">
+          <img src="/img/copper-pipes-wrench-repair.jpg" alt="Copper supply lines and wrench fitting in mechanical space" width="400" height="300" loading="lazy" decoding="async">
+        </div>
+        <div class="bento-info-card">
+          <p>Aurora Plumbing Guide shows homeowners what to ask an independent licensed contractor. It does not employ crews, pull permits, or dispatch a truck.</p>
+          <a class="inline-arrow-link" href="/about/">How This Guide Is Verified &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="showcase-heading">
+      <div class="band-header-center">
+        <p class="eyebrow">Scope Clarity First</p>
+        <h2 id="showcase-heading">Built Around Local Rules</h2>
+        <p class="band-sub">Separate indoor fixture repairs from permitted tank swaps and lateral excavation before signing any estimate across Aurora and the Front Range.</p>
+      </div>
+      <div class="showcase-banner-wrap">
+        <img src="/img/hero-construction-pipes.jpg" alt="Residential plumbing piping and main supply installation" width="1200" height="525" loading="lazy" decoding="async">
+      </div>
+      <div class="stats-strip">
+        <div class="stat-item"><div class="stat-figure">37</div><div class="stat-caption">Distinct Residential<br>Plumbing Scopes</div></div>
+        <div class="stat-item"><div class="stat-figure">45</div><div class="stat-caption">Front Range Cities<br>&amp; Towns Documented</div></div>
+        <div class="stat-item"><div class="stat-figure">15</div><div class="stat-caption">Permit &amp; Utility<br>Decision Guides</div></div>
+        <div class="stat-item"><div class="stat-figure">100<span>%</span></div><div class="stat-caption">Private Browser-Only<br>Quote Checklist</div></div>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="problems-heading">
+      <div class="asymmetric-top">
+        <div>
+          <p class="eyebrow">What Kind of Problem Is It</p>
+          <h2 id="problems-heading">Core Plumbing Repair Scopes</h2>
+          <p class="band-sub">Start with the symptom on your property. Each page separates repair vs. replacement paths and flags what needs a city permit or utility check.</p>
+        </div>
+        <a class="icon-card" href="/services/water-heater-repair/">
+          <div>
+            <span class="icon-badge" aria-hidden="true">&#9881;</span>
+            <h3>No Hot Water or Wet Tank</h3>
+            <p>A wet fitting or failed valve can still be repairable. A full tank swap requires a permit and inspection request.</p>
+          </div>
+          <span class="inline-arrow-link">Learn More &rarr;</span>
+        </a>
+      </div>
+      <div class="icon-card-grid">
+        <a class="icon-card" href="/services/tankless-water-heater-installation/"><div><span class="icon-badge" aria-hidden="true">&#9889;</span><h3>Switching to Tankless</h3><p>Changing to tankless means new venting, condensate drainage, and gas-load or electrical capacity checks—not a thinner tank.</p></div><span class="inline-arrow-link">Learn More &rarr;</span></a>
+        <a class="icon-card" href="/services/drain-cleaning/"><div><span class="icon-badge" aria-hidden="true">+</span><h3>One Slow Sink or Drain</h3><p>Start with a localized clog. If the lowest floor drain backs up with sewage, the issue may extend to your main lateral.</p></div><span class="inline-arrow-link">Learn More &rarr;</span></a>
+        <a class="icon-card" href="/services/sewer-line-repair/"><div><span class="icon-badge" aria-hidden="true">&harr;</span><h3>Sewer Backup or Broken Line</h3><p>Aurora Water maintains the main. Property owners keep the line from the building through the tap, including street patching.</p></div><span class="inline-arrow-link">Learn More &rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="categories-heading">
+      <div class="band-header-center">
+        <p class="eyebrow">System Categories</p>
+        <h2 id="categories-heading">Solutions for Your Home</h2>
+        <p class="band-sub">Explore dedicated repair and replacement pages across heating, supply piping, drainage, and fixture assemblies.</p>
+      </div>
+      <div class="photo-card-grid">
+        <a class="photo-card" href="/services/water-heater-replacement/"><div><h3>Water Heaters</h3><p>Permit expectations, same-day inspection limits, and tank swap quote items.</p></div><div class="photo-card-media"><img src="/img/water-filtration-system-install.jpg" alt="Residential utility room water heater and filtration setup" width="600" height="450" loading="lazy" decoding="async"></div></a>
+        <a class="photo-card" href="/services/leak-detection/"><div><h3>Leak Detection</h3><p>A sewer camera cannot see a pressurized supply line. Isolate leaks before slab cuts.</p></div><div class="photo-card-media"><img src="/img/pipe-leak-pliers-under-sink.jpg" alt="Plumber isolating pipe joint leak under residential sink" width="600" height="450" loading="lazy" decoding="async"></div></a>
+        <a class="photo-card" href="/services/faucet-sink-fixture-repair/"><div><h3>Fixtures &amp; Valves</h3><p>Separate simple faucet, toilet, or disposal repairs from concealed wall piping damage.</p></div><div class="photo-card-media"><img src="/img/bathroom-sink-faucet-plumbing.jpg" alt="Bathroom sink faucet and chrome supply plumbing assembly" width="600" height="450" loading="lazy" decoding="async"></div></a>
+        <a class="photo-card" href="/services/whole-house-repiping/"><div><h3>Supply Repiping</h3><p>Compare spot pipe repair against full-house supply replacement when pressure drops.</p></div><div class="photo-card-media"><img src="/img/plumbing-equipment-fittings-layout.jpg" alt="Plumbing shutoff valves, fittings, and manifold equipment layout" width="600" height="450" loading="lazy" decoding="async"></div></a>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="facts-heading">
+      <div class="split-rules">
+        <div>
+          <p class="eyebrow">City &amp; Utility Rules</p>
+          <h2 id="facts-heading">Three Aurora Facts That Move the Price</h2>
+          <p class="band-sub">Before accepting an open-ended quote, verify who owns the pipe outside your foundation and what Aurora Water or the Building Division actually provides.</p>
+          <div class="rule-stack">
+            <details class="rule-accordion" open><summary>Sewer Ownership Runs to the Tap</summary><div class="rule-body"><p>Aurora Water keeps the sewer main and manholes. You keep the service line from the tap to the building, including the tee or saddle and street repair if work disturbs it.</p><a class="inline-arrow-link" href="/guides/aurora-sewer-line-responsibility/">Who Owns the Line &rarr;</a></div></details>
+            <details class="rule-accordion"><summary>Free City Sewer Video Second Look</summary><div class="rule-body"><p>If a plumber cameras your lateral, Aurora residents can ask the City for a free second look at the recording. This site does not upload video files for you.</p><a class="inline-arrow-link" href="/guides/aurora-sewer-camera-second-opinion/">Camera Review Guide &rarr;</a></div></details>
+            <details class="rule-accordion"><summary>Same-Day Water Heater Inspection Limits</summary><div class="rule-body"><p>A licensed contractor can request a same-day inspection on a replacement tank when you and the contractor are both present, though the City may still arrive another day.</p><a class="inline-arrow-link" href="/guides/aurora-water-heater-permits/">Permit &amp; Inspection Guide &rarr;</a></div></details>
+          </div>
+        </div>
+        <div class="stacked-photos">
+          <div class="stacked-photo-box"><img src="/img/industrial-utility-pipe-service.jpg" alt="Commercial and residential utility pipe servicing equipment" width="800" height="450" loading="lazy" decoding="async"></div>
+          <div class="stacked-photo-box"><img src="/img/pipe-adjustment-wrench-service.jpg" alt="Plumber adjusting water and gas pipe fittings with wrench" width="800" height="450" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="jurisdiction-heading">
+      <div class="band-header-center">
+        <p class="eyebrow">Outside Aurora City Limits</p>
+        <h2 id="jurisdiction-heading">If the House Is Not in Aurora</h2>
+        <p class="band-sub">Aurora rules stop at the city line. A mailing city is not a permit jurisdiction—check the rules and quote prep checklist for your actual parcel.</p>
+      </div>
+      <div class="workflow-split">
+        <div class="workflow-tabs" role="tablist" aria-label="Jurisdictions and homeowner tools">
+          <button type="button" class="workflow-tab is-active" role="tab" aria-selected="true" data-title="Compare Scopes With the Quote Checklist" data-body="When you are ready to compare written quotes, use the checklist. It stays in your browser, asks for no name or address, and outputs no guessed pricing." data-href="/guides/plumbing-quote-checklist/" data-cta="Open Quote Checklist &rarr;" data-img="/img/kitchen-sink-plumbing-tools.jpg" data-alt="Kitchen sink drain and plumbing service tools"><span class="workflow-tab-main"><span class="icon-badge" aria-hidden="true">&#10003;</span><span><span class="workflow-tab-title">Quote Checklist</span><span class="workflow-tab-desc">Browser-only scope questions before hiring.</span></span></span><span class="workflow-tab-arrow" aria-hidden="true">&rarr;</span></button>
+          <button type="button" class="workflow-tab" role="tab" aria-selected="false" data-title="Centennial Permit &amp; District Split" data-body="Centennial does not supply water or sewer directly. Special districts handle utilities while city permitting follows its own published review tiers." data-href="/areas/centennial/" data-cta="Read Centennial Guide &rarr;" data-img="/img/tiled-bathroom-sink-repair.jpg" data-alt="Residential bathroom plumbing fixture and tiled wall"><span class="workflow-tab-main"><span class="icon-badge" aria-hidden="true">&#9678;</span><span><span class="workflow-tab-title">Centennial Rules</span><span class="workflow-tab-desc">Special water/sewer districts, separate city permits.</span></span></span><span class="workflow-tab-arrow" aria-hidden="true">&rarr;</span></button>
+          <button type="button" class="workflow-tab" role="tab" aria-selected="false" data-title="Parker &amp; Highlands Ranch Boundaries" data-body="Parker handles permitting inside the town while Highlands Ranch is unincorporated Douglas County. Confirm district service boundaries for your parcel." data-href="/areas/parker/" data-cta="Read Parker &amp; Area Rules &rarr;" data-img="/img/shower-valve-repair-bathroom.jpg" data-alt="Bathroom shower mixing valve and pipe trim installation"><span class="workflow-tab-main"><span class="icon-badge" aria-hidden="true">&#9635;</span><span><span class="workflow-tab-title">Parker &amp; Highlands Ranch</span><span class="workflow-tab-desc">Town vs. unincorporated Douglas County permits.</span></span></span><span class="workflow-tab-arrow" aria-hidden="true">&rarr;</span></button>
+          <button type="button" class="workflow-tab" role="tab" aria-selected="false" data-title="Castle Rock Tankless &amp; Gas Math" data-body="Castle Rock may skip plan review on standard tank swaps but adds review and gas-load sizing math when converting to a tankless water heater." data-href="/areas/castle-rock/" data-cta="Read Castle Rock Guide &rarr;" data-img="/img/under-sink-modern-bathroom.jpg" data-alt="Clean under-sink water supply lines and shutoff valves"><span class="workflow-tab-main"><span class="icon-badge" aria-hidden="true">&#9728;</span><span><span class="workflow-tab-title">Castle Rock Permitting</span><span class="workflow-tab-desc">Tankless gas-load calculations and plan review.</span></span></span><span class="workflow-tab-arrow" aria-hidden="true">&rarr;</span></button>
+        </div>
+        <div id="workflow-panel" class="workflow-panel">
+          <div><h3 data-wf-title>Compare Scopes With the Quote Checklist</h3><p data-wf-body>When you are ready to compare written quotes, use the checklist. It stays in your browser, asks for no name or address, and outputs no guessed pricing.</p></div>
+          <div class="workflow-panel-media"><img data-wf-img src="/img/kitchen-sink-plumbing-tools.jpg" alt="Kitchen sink drain and plumbing service tools" width="800" height="400" loading="lazy" decoding="async"></div>
+          <div><a class="btn-outline" data-wf-link href="/guides/plumbing-quote-checklist/">Open Quote Checklist &rarr;</a><div class="workflow-quick-links"><a href="/areas/centennial/">Centennial</a><a href="/areas/parker/">Parker</a><a href="/areas/highlands-ranch/">Highlands Ranch</a><a href="/areas/castle-rock/">Castle Rock</a><a href="/areas/">All 45 Areas</a></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-band" aria-labelledby="guides-spotlight-heading">
+      <div class="band-header-center">
+        <p class="eyebrow">Essential Reading</p>
+        <h2 id="guides-spotlight-heading">Questions &amp; Guides Across the Front Range</h2>
+        <p class="band-sub">Understand how referrals work, how to request a City camera second opinion, and which neighboring cities have verified permit pages.</p>
+      </div>
+      <div class="spotlight-grid">
+        <div class="spotlight-main">
+          <div><div class="spotlight-num">01</div><h3>How a Plumbing Referral Works Here</h3><p>This website is an independent consumer plumbing guide. It does not hold a plumbing license, employ crews, or accept web forms. Learn how scope preparation works before live call routing is connected.</p><a class="btn-primary" href="/how-it-works/">Read How It Works &rarr;</a></div>
+          <div class="spotlight-photo"><img src="/img/repairman-fixing-pipes-wrench.jpg" alt="Plumber working with wrench on residential water piping" width="600" height="450" loading="lazy" decoding="async"></div>
+        </div>
+        <a class="spotlight-side" href="/guides/aurora-sewer-camera-second-opinion/"><div><div class="spotlight-side-num">02</div><div class="spotlight-side-label">Camera Review</div></div><div class="spotlight-side-photo"><img src="/img/home-bathroom-sink-drain.jpg" alt="Drain assembly inspection inside home bathroom" width="360" height="480" loading="lazy" decoding="async"></div></a>
+        <a class="spotlight-side" href="/areas/"><div><div class="spotlight-side-num">03</div><div class="spotlight-side-label">Nearby Cities</div></div><div class="spotlight-side-photo"><img src="/img/modern-bathroom-sink-plumbing.jpg" alt="Finished bathroom plumbing fixtures and drain setup" width="360" height="480" loading="lazy" decoding="async"></div></a>
+      </div>
+    </section>
+
+    <section class="landing-band qa-list" aria-labelledby="qa-heading">
+      <p class="eyebrow">Key Clarifications</p>
+      <h2 id="qa-heading">Questions to Settle First</h2>
+      <div class="qa-grid">
+        <article class="qa-item"><h3 class="qa-q">Are you the plumber?</h3><p class="qa-a">No. This is a referral-style guide. It does not hold a plumbing license, employ a crew, or dispatch a truck. The pages tell you what to ask an independent contractor. Calls, email, and forms are turned off until a real destination exists. Nothing you read here books a visit.</p></article>
+        <article class="qa-item"><h3 class="qa-q">Does Aurora Water own the sewer from the house to the main?</h3><p class="qa-a">No. The City's wastewater page says you maintain the service line from the sewer tap to the building, including the connection and related street damage. Aurora Water maintains the city main and the manholes. A backup in a floor drain can still be yours. Get a camera before you assign the bill.</p></article>
+        <article class="qa-item"><h3 class="qa-q">Will the City inspect a new water heater today?</h3><p class="qa-a">Not as a promise. A licensed contractor may request a same-day inspection when you can both be there. The City says it may inspect on another day if the schedule is full. Ask the contractor to make the request. Do not sign a quote that treats same-day approval as guaranteed.</p></article>
+        <article class="qa-item"><h3 class="qa-q">Does Aurora's sewer rule apply in the next town?</h3><p class="qa-a">No. Denver keeps the lateral through the tap on the owner and uses its own quick permit. Lakewood's sewer drawing is only the city's north-side customers. A mailing city is not the permit office. Use the nearby-cities list for the parcel you actually have, and do not carry Aurora's tap rule across the line.</p></article>
+        <article class="qa-item"><h3 class="qa-q">Can I send you the sewer video?</h3><p class="qa-a">No. Aurora Water accepts resident video at the address on the City's wastewater page. This website has no upload and no inbox. The second-opinion guide lists what the recording should show so the City's review is useful. We are not the City.</p></article>
+      </div>
+    </section>
     """
     return _page(
         "/",
         "Plumber Aurora CO | Aurora Plumbing Guide",
-        "Decide the plumbing job in Aurora, Colorado, before you hire. Referral guide. Calls and forms are off in this preview.",
+        "Decide the plumbing job in Aurora, Colorado, before you hire. Referral guide. Compare plumbing scopes, permit rules, and utility boundaries before hiring.",
         "Plumber Aurora CO",
         "Home",
         "plumber Aurora CO",
