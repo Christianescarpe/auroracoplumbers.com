@@ -1,17 +1,26 @@
 :root {
-  --bg: #121212;
-  --surface: #1b1b1b;
-  --surface-2: #161616;
-  --surface-3: #222222;
-  --ink: #f4f4f4;
-  --muted: #a3a3a3;
-  --line: #2a2a2a;
-  --line-strong: #3a3a3a;
-  --accent: #f05018;
-  --accent-hover: #ff642c;
-  --accent-soft: rgba(240, 80, 24, 0.14);
-  --focus: #ff6b35;
-  --shadow: 0 20px 44px rgba(0, 0, 0, 0.45);
+  --teal-deep: #092328;
+  --forest: #12544F;
+  --emerald: #2A835F;
+  --emerald-dark: #216b4d;
+  --white: #FFFFFF;
+
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-tint: #f4f8f7;
+  --ink: #092328;
+  --body-ink: #374a4d;
+  --muted: #52676a;
+  --on-dark-ink: #FFFFFF;
+  --on-dark-muted: #cfe2df;
+  --line: #d4e1df;
+  --line-dark: rgba(42, 131, 95, 0.42);
+  --accent: #2A835F;
+  --accent-hover: #216b4d;
+  --accent-soft: rgba(42, 131, 95, 0.12);
+  --focus: #2A835F;
+  --shadow: 0 16px 38px rgba(9, 35, 40, 0.08);
+  --shadow-dark: 0 18px 40px rgba(4, 18, 21, 0.35);
   --max: 76rem;
   --read: 44rem;
   --font-display: "Barlow Condensed", "Oswald", "Arial Narrow", "Helvetica Neue", sans-serif;
@@ -31,7 +40,7 @@ html {
 
 body {
   margin: 0;
-  color: var(--ink);
+  color: var(--body-ink);
   background: var(--bg);
   font-family: var(--font-body);
   font-size: 0.98rem;
@@ -47,11 +56,11 @@ svg {
 }
 
 a {
-  color: #f4f4f4;
+  color: var(--forest);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   overflow-wrap: anywhere;
-  transition: color 0.16s ease, border-color 0.16s ease, background-color 0.16s ease;
+  transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 a:hover {
@@ -63,7 +72,7 @@ a:hover {
   left: 0.75rem;
   top: -4rem;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   padding: 0.6rem 0.9rem;
   font-weight: 700;
   z-index: 50;
@@ -75,14 +84,14 @@ a:hover {
 }
 
 /* ==========================================================================
-   Header Navigation Bar
+   Header Navigation Bar (#092328 Deep Teal + #2A835F Emerald Accents)
    ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 30;
-  background: rgba(18, 18, 18, 0.96);
-  border-bottom: 1px solid var(--line);
+  background: rgba(9, 35, 40, 0.97);
+  border-bottom: 1px solid var(--forest);
   backdrop-filter: blur(10px);
 }
 
@@ -107,14 +116,14 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   min-width: 0;
   flex: 0 0 auto;
 }
 
 .brand:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .brand-mark {
@@ -125,7 +134,7 @@ a:hover {
   flex: 0 0 auto;
   border-radius: 3px;
   background: var(--accent);
-  color: #141414;
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 800;
@@ -145,11 +154,11 @@ a:hover {
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .brand-kicker {
-  color: var(--muted);
+  color: var(--on-dark-muted);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -168,9 +177,9 @@ button {
 .nav-toggle {
   min-height: 40px;
   border-radius: 2px;
-  border: 1px solid var(--line-strong);
-  background: var(--surface);
-  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: var(--forest);
+  color: var(--white);
   padding: 0.35rem 0.9rem;
   font-family: var(--font-display);
   font-weight: 700;
@@ -182,7 +191,8 @@ button {
 
 .nav-toggle:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
 }
 
 .header-action {
@@ -192,10 +202,10 @@ button {
   gap: 0.45rem;
   min-height: 38px;
   padding: 0.4rem 1.05rem;
-  border: 1px solid var(--line-strong);
+  border: 1px solid rgba(255, 255, 255, 0.36);
   border-radius: 2px;
   background: transparent;
-  color: #ffffff;
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 0.92rem;
   font-weight: 700;
@@ -208,13 +218,13 @@ button {
 .header-action:hover {
   border-color: var(--accent);
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
 }
 
 .site-nav {
   display: none;
   flex-basis: 100%;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--forest);
   margin-top: 0.35rem;
   padding-top: 0.45rem;
 }
@@ -235,7 +245,7 @@ button {
   min-height: 40px;
   padding: 0.2rem 0;
   margin-right: 1rem;
-  color: #d0d0d0;
+  color: var(--on-dark-muted);
   text-decoration: none;
   font-size: 0.78rem;
   font-weight: 600;
@@ -244,11 +254,11 @@ button {
 }
 
 .site-nav a:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
 .site-nav a[aria-current="page"] {
-  color: #ffffff;
+  color: var(--white);
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-decoration-thickness: 2px;
@@ -259,10 +269,10 @@ button {
    Buttons & Typographic Primitives
    ========================================================================== */
 .eyebrow {
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.6rem;
   color: var(--accent);
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -276,7 +286,7 @@ h3 {
   line-height: 1.04;
   text-transform: uppercase;
   letter-spacing: 0.015em;
-  color: #ffffff;
+  color: var(--ink);
 }
 
 h1 {
@@ -322,24 +332,27 @@ h3 {
 .btn-primary {
   background: var(--accent);
   border: 1px solid var(--accent);
-  color: #ffffff;
+  color: var(--white);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  color: #ffffff;
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--line-strong);
-  color: #ffffff;
+  border: 1px solid var(--accent);
+  color: var(--ink);
 }
 
 .btn-outline:hover {
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 .btn-row {
@@ -356,7 +369,7 @@ h3 {
   height: 2.35rem;
   border-radius: 50%;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   text-decoration: none;
   font-weight: 700;
   font-size: 1.05rem;
@@ -364,8 +377,8 @@ h3 {
 }
 
 .circle-arrow:hover {
-  background: var(--accent-hover);
-  color: #ffffff;
+  background: var(--white);
+  color: var(--teal-deep);
 }
 
 .icon-badge {
@@ -375,7 +388,7 @@ h3 {
   height: 2.2rem;
   border-radius: 2px;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   flex: 0 0 auto;
 }
 
@@ -393,7 +406,9 @@ h3 {
 }
 
 .site-main.is-landing {
-  padding-top: 2.25rem;
+  width: 100%;
+  max-width: none;
+  padding: 0;
 }
 
 .crumbs ol {
@@ -409,17 +424,85 @@ h3 {
   letter-spacing: 0.06em;
 }
 
+.crumbs a {
+  color: var(--forest);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.crumbs a:hover {
+  color: var(--accent);
+}
+
 .crumbs li:not(:last-child)::after {
   content: "/";
   margin-left: 0.5rem;
-  color: #555555;
+  color: #8fa3a5;
 }
 
 /* ==========================================================================
-   Landing Page Design Architecture (Matched to Dark Industrial Reference)
+   Landing Page Sections (Alternating #092328, #FFFFFF, #12544F Rhythm)
    ========================================================================== */
 .landing-band {
-  margin-bottom: 4.75rem;
+  padding: 4.5rem max(1rem, calc((100% - var(--max)) / 2));
+  margin-bottom: 0;
+  background: var(--white);
+  color: var(--body-ink);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Dark Hero Band (#092328 -> #12544F gradient) */
+.site-main.is-landing > .landing-band:nth-of-type(1) {
+  padding-top: 3rem;
+  background: linear-gradient(155deg, var(--teal-deep) 0%, #0d3237 64%, var(--forest) 100%);
+  color: var(--on-dark-ink);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* Secondary Highlighted Dark Forest Band (#12544F) */
+.site-main.is-landing > .landing-band:nth-of-type(3),
+.site-main.is-landing > .landing-band:nth-of-type(7) {
+  background: linear-gradient(180deg, var(--forest) 0%, #0e4642 100%);
+  color: var(--on-dark-ink);
+  border-bottom: 1px solid rgba(42, 131, 95, 0.35);
+}
+
+/* Deep Teal Rules Band (#092328) */
+.site-main.is-landing > .landing-band:nth-of-type(5) {
+  background: var(--teal-deep);
+  color: var(--on-dark-ink);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Typography & Eyebrow overrides on Dark Sections (bands 1, 3, 5, 7) */
+.site-main.is-landing > .landing-band:nth-of-type(odd) h1,
+.site-main.is-landing > .landing-band:nth-of-type(odd) h2,
+.site-main.is-landing > .landing-band:nth-of-type(odd) h3 {
+  color: var(--white);
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .lede,
+.site-main.is-landing > .landing-band:nth-of-type(odd) .band-sub {
+  color: var(--on-dark-muted);
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .eyebrow {
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 2px;
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .btn-outline {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--white);
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .btn-outline:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--white);
 }
 
 .band-header-center {
@@ -457,7 +540,7 @@ h3 {
   font-weight: 700;
   line-height: 1.1;
   text-transform: uppercase;
-  color: #d4d4d4;
+  color: var(--on-dark-muted);
   margin: 0 0 1rem;
 }
 
@@ -468,11 +551,12 @@ h3 {
 }
 
 .hero-photo-frame {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--forest);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
+  box-shadow: var(--shadow-dark);
 }
 
 .hero-photo-frame img {
@@ -489,8 +573,8 @@ h3 {
 
 .bento-stat-card,
 .bento-info-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--forest);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   padding: 1.35rem 1.5rem;
 }
@@ -507,11 +591,11 @@ h3 {
   font-size: 2.55rem;
   font-weight: 800;
   line-height: 1;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .bento-stat-num span {
-  color: var(--accent);
+  color: #8ee3be;
 }
 
 .bento-stat-label {
@@ -519,12 +603,12 @@ h3 {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
+  color: var(--on-dark-muted);
 }
 
 .bento-thumb {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--forest);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   overflow: hidden;
   min-height: 140px;
@@ -547,7 +631,7 @@ h3 {
 .bento-info-card p {
   margin: 0;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   line-height: 1.55;
 }
 
@@ -561,21 +645,31 @@ h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #ffffff;
-}
-
-.inline-arrow-link:hover {
   color: var(--accent);
 }
 
-/* 2. Centered Showcase + 4-Col Stat Strip */
+.inline-arrow-link:hover {
+  color: var(--forest);
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .inline-arrow-link {
+  color: var(--white);
+}
+
+.site-main.is-landing > .landing-band:nth-of-type(odd) .inline-arrow-link:hover {
+  color: #9be5c5;
+}
+
+/* 2. Centered Showcase + 4-Col Stat Strip (White Primary Section) */
 .showcase-banner-wrap {
-  background: var(--surface);
+  background: var(--white);
   border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 1.75rem;
   aspect-ratio: 16 / 7;
+  box-shadow: var(--shadow);
 }
 
 .showcase-banner-wrap img {
@@ -594,8 +688,8 @@ h3 {
 }
 
 .stat-item {
-  padding: 0.75rem 0.5rem;
-  border-top: 1px solid var(--line);
+  padding: 0.9rem 0.5rem;
+  border-top: 2px solid var(--accent);
 }
 
 .stat-figure {
@@ -603,7 +697,7 @@ h3 {
   font-size: clamp(2rem, 3.6vw, 2.85rem);
   font-weight: 800;
   line-height: 1;
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .stat-figure span {
@@ -617,7 +711,7 @@ h3 {
   line-height: 1.4;
 }
 
-/* 3. Asymmetric Icon Feature Grid */
+/* 3. Asymmetric Icon Feature Grid (#12544F section + #092328 cards) */
 .asymmetric-top {
   display: grid;
   gap: 1.5rem;
@@ -631,7 +725,7 @@ h3 {
 
 .asymmetric-top p.band-sub {
   margin: 0;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   font-size: 0.92rem;
   max-width: 34rem;
 }
@@ -646,32 +740,35 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--teal-deep);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   padding: 1.45rem;
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--shadow-dark);
 }
 
 .icon-card:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
   color: inherit;
 }
 
 .icon-card h3 {
   margin: 0.85rem 0 0.45rem;
   font-size: 1.22rem;
+  color: var(--white);
 }
 
 .icon-card p {
   margin: 0;
   font-size: 0.87rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   line-height: 1.55;
 }
 
-/* 4. Four-Column Image Solution Cards */
+/* 4. Four-Column Image Solution Cards (White Section + White Cards) */
 .photo-card-grid {
   display: grid;
   gap: 1rem;
@@ -682,22 +779,26 @@ h3 {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-  background: var(--surface);
+  background: var(--white);
   border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
   border-radius: 4px;
   padding: 1.25rem;
   text-decoration: none;
   color: inherit;
+  box-shadow: var(--shadow);
 }
 
 .photo-card:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
   color: inherit;
 }
 
 .photo-card h3 {
   margin: 0 0 0.45rem;
   font-size: 1.25rem;
+  color: var(--teal-deep);
 }
 
 .photo-card p {
@@ -711,7 +812,7 @@ h3 {
   border-radius: 3px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  background: var(--surface-2);
+  background: var(--surface-tint);
 }
 
 .photo-card-media img {
@@ -721,7 +822,7 @@ h3 {
   display: block;
 }
 
-/* 5. Split Rules + Stacked Dual Photos */
+/* 5. Split Rules + Stacked Dual Photos (#092328 Dark Section) */
 .split-rules {
   display: grid;
   gap: 1.75rem;
@@ -734,7 +835,7 @@ h3 {
 
 .split-rules .band-sub {
   margin: 0 0 1.4rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   font-size: 0.92rem;
 }
 
@@ -744,8 +845,8 @@ h3 {
 }
 
 .rule-accordion {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--forest);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
 }
 
@@ -766,7 +867,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .rule-accordion summary::-webkit-details-marker {
@@ -777,7 +878,7 @@ h3 {
   content: "›";
   font-size: 1.35rem;
   line-height: 1;
-  color: var(--accent);
+  color: #8ee3be;
   transition: transform 0.2s ease;
 }
 
@@ -787,13 +888,13 @@ h3 {
 
 .rule-body {
   padding: 0 1.15rem 1.05rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-dark);
 }
 
 .rule-body p {
   margin: 0.75rem 0 0.65rem;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
 }
 
 .stacked-photos {
@@ -802,11 +903,12 @@ h3 {
 }
 
 .stacked-photo-box {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--forest);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
+  box-shadow: var(--shadow-dark);
 }
 
 .stacked-photo-box img {
@@ -816,7 +918,7 @@ h3 {
   display: block;
 }
 
-/* 6. Interactive Workflow Tabs Split */
+/* 6. Interactive Workflow Tabs Split (White Primary Section) */
 .workflow-split {
   display: grid;
   gap: 1.25rem;
@@ -826,7 +928,7 @@ h3 {
 .workflow-tabs {
   display: grid;
   gap: 0.65rem;
-  background: var(--surface);
+  background: var(--surface-tint);
   border: 1px solid var(--line);
   border-radius: 4px;
   padding: 1rem;
@@ -840,18 +942,22 @@ h3 {
   justify-content: space-between;
   gap: 0.85rem;
   padding: 0.85rem 0.95rem;
-  background: var(--surface-2);
+  background: var(--white);
   border: 1px solid var(--line);
   border-radius: 3px;
-  color: #ffffff;
+  color: var(--teal-deep);
   cursor: pointer;
-  transition: border-color 0.16s ease, background-color 0.16s ease;
+  transition: border-color 0.16s ease, background-color 0.16s ease, color 0.16s ease;
 }
 
-.workflow-tab:hover,
+.workflow-tab:hover {
+  border-color: var(--accent);
+}
+
 .workflow-tab.is-active {
   border-color: var(--accent);
-  background: #221a16;
+  background: var(--forest);
+  color: var(--white);
 }
 
 .workflow-tab-main {
@@ -867,7 +973,11 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--teal-deep);
+}
+
+.workflow-tab.is-active .workflow-tab-title {
+  color: var(--white);
 }
 
 .workflow-tab-desc {
@@ -878,26 +988,37 @@ h3 {
   line-height: 1.35;
 }
 
+.workflow-tab.is-active .workflow-tab-desc {
+  color: var(--on-dark-muted);
+}
+
 .workflow-tab-arrow {
   color: var(--accent);
   font-weight: 700;
   flex: 0 0 auto;
 }
 
+.workflow-tab.is-active .workflow-tab-arrow {
+  color: var(--white);
+}
+
 .workflow-panel {
-  background: var(--surface);
+  background: var(--white);
   border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
   border-radius: 4px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
+  box-shadow: var(--shadow);
 }
 
 .workflow-panel h3 {
   margin: 0 0 0.5rem;
   font-size: 1.45rem;
+  color: var(--teal-deep);
 }
 
 .workflow-panel p {
@@ -910,7 +1031,7 @@ h3 {
   border-radius: 3px;
   overflow: hidden;
   aspect-ratio: 16 / 8;
-  background: var(--surface-2);
+  background: var(--surface-tint);
 }
 
 .workflow-panel-media img {
@@ -924,50 +1045,56 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem 1.15rem;
-  margin-top: 0.25rem;
+  margin-top: 0.65rem;
   font-size: 0.82rem;
 }
 
-/* 7. Spotlight 01 + Numbered Cards 02 & 03 */
+/* 7. Spotlight 01 + Numbered Cards 02 & 03 (#12544F section + #092328 cards) */
 .spotlight-grid {
   display: grid;
   gap: 1rem;
 }
 
 .spotlight-main {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--teal-deep);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   padding: 1.5rem;
   display: grid;
   gap: 1.25rem;
   align-items: center;
+  box-shadow: var(--shadow-dark);
 }
 
 .spotlight-num {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 2px;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 800;
-  color: var(--accent);
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.55rem;
 }
 
 .spotlight-main h3 {
   margin: 0 0 0.65rem;
   font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+  color: var(--white);
 }
 
 .spotlight-main p {
   margin: 0 0 1.15rem;
   font-size: 0.88rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
 }
 
 .spotlight-photo {
   border-radius: 3px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
-  background: var(--surface-2);
+  background: var(--forest);
 }
 
 .spotlight-photo img {
@@ -978,8 +1105,8 @@ h3 {
 }
 
 .spotlight-side {
-  background: var(--surface);
-  border: 1px solid var(--line);
+  background: var(--teal-deep);
+  border: 1px solid var(--line-dark);
   border-radius: 4px;
   padding: 1.1rem 0.9rem;
   display: flex;
@@ -989,10 +1116,12 @@ h3 {
   text-decoration: none;
   color: inherit;
   text-align: center;
+  box-shadow: var(--shadow-dark);
 }
 
 .spotlight-side:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
   color: inherit;
 }
 
@@ -1001,7 +1130,7 @@ h3 {
   font-size: 1.75rem;
   font-weight: 800;
   line-height: 1;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .spotlight-side-label {
@@ -1010,14 +1139,14 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--muted);
+  color: #9be5c5;
 }
 
 .spotlight-side-photo {
   border-radius: 3px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
-  background: var(--surface-2);
+  background: var(--forest);
 }
 
 .spotlight-side-photo img {
@@ -1027,11 +1156,28 @@ h3 {
   display: block;
 }
 
-/* 8. Pre-Footer CTA Band */
+/* 8. Q&A White Section */
+.qa-grid {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.qa-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 24px rgba(9, 35, 40, 0.05);
+}
+
+/* 9. Pre-Footer CTA Band (Deep Forest -> Deep Teal Gradient) */
 .pre-footer {
-  border-top: 1px solid var(--line);
+  border-top: 2px solid var(--accent);
   padding: 3.25rem 0 2.75rem;
-  background: var(--bg);
+  background: linear-gradient(135deg, var(--forest) 0%, var(--teal-deep) 100%);
+  color: var(--white);
 }
 
 .pre-footer-inner {
@@ -1046,13 +1192,14 @@ h3 {
   margin: 0;
   font-size: clamp(1.9rem, 3.8vw, 3rem);
   max-width: 34rem;
+  color: var(--white);
 }
 
 /* ==========================================================================
    Inner Content Pages (.sheet, .job-card, .section-figure, Q&A, Checklist)
    ========================================================================== */
 .sheet {
-  background: var(--surface-2);
+  background: var(--white);
   border: 1px solid var(--line);
   border-radius: 6px;
   box-shadow: var(--shadow);
@@ -1072,18 +1219,19 @@ h3 {
   border-radius: 5px 5px 0 0;
   padding: 3rem 1.5rem 3.35rem;
   margin: -1.35rem -1.15rem 2rem;
+  background-color: var(--teal-deep);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #ffffff;
-  border-bottom: 2px solid var(--accent);
+  color: var(--white);
+  border-bottom: 3px solid var(--accent);
 }
 
 .sheet-hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(16, 16, 16, 0.93) 0%, rgba(18, 18, 18, 0.80) 55%, rgba(24, 24, 24, 0.90) 100%);
+  background: linear-gradient(135deg, rgba(9, 35, 40, 0.93) 0%, rgba(18, 84, 79, 0.84) 58%, rgba(42, 131, 95, 0.72) 100%);
   z-index: 1;
 }
 
@@ -1094,17 +1242,21 @@ h3 {
 }
 
 .sheet-hero .eyebrow {
-  color: var(--accent);
+  display: inline-block;
+  padding: 0.22rem 0.65rem;
+  background: var(--accent);
+  color: var(--white);
+  border-radius: 2px;
 }
 
 .sheet-hero h1 {
-  color: #ffffff;
+  color: var(--white);
   margin: 0 0 0.75rem;
   font-size: clamp(2.1rem, 4.4vw, 3.35rem);
 }
 
 .sheet-hero .lede {
-  color: #d8d8d8;
+  color: var(--on-dark-muted);
   margin-bottom: 0;
 }
 
@@ -1133,12 +1285,12 @@ h3 {
 .sheet p,
 .sheet li,
 .sheet dd {
-  color: #c2c2c2;
+  color: var(--body-ink);
 }
 
 .sheet strong,
 .sheet dt {
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .status-row,
@@ -1166,14 +1318,17 @@ h3 {
   min-height: 44px;
   padding: 1.05rem 1.15rem;
   border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
   border-radius: 4px;
-  background: var(--surface);
+  background: var(--white);
   color: inherit;
   text-decoration: none;
+  box-shadow: 0 6px 20px rgba(9, 35, 40, 0.05);
 }
 
 .job-card:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
   color: inherit;
 }
 
@@ -1182,7 +1337,7 @@ h3 {
   font-size: 1.25rem;
   text-transform: uppercase;
   line-height: 1.18;
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .job-card span:last-child {
@@ -1203,9 +1358,9 @@ h3 {
 .disabled-panel,
 .briefing,
 .call-panel {
-  background: var(--surface);
+  background: var(--surface-tint);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--accent);
+  border-left: 4px solid var(--accent);
   border-radius: 4px;
   padding: 1rem 1.15rem;
 }
@@ -1232,7 +1387,7 @@ h3 {
   padding: 0.12rem 0.5rem;
   border-radius: 2px;
   background: var(--accent-soft);
-  color: var(--accent);
+  color: var(--forest);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -1264,7 +1419,7 @@ h3 {
   display: grid;
   place-items: center;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   font-family: var(--font-display);
   font-weight: 800;
 }
@@ -1280,7 +1435,7 @@ h3 {
 .plain-dl dt {
   font-weight: 700;
   margin-top: 0.75rem;
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .plain-dl dd {
@@ -1293,23 +1448,10 @@ h3 {
   max-width: none;
 }
 
-.qa-grid {
-  display: grid;
-  gap: 0.9rem;
-  margin-top: 1.25rem;
-}
-
-.qa-item {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 1.25rem;
-}
-
 .qa-q {
   margin-top: 1.2rem;
   margin-bottom: 0.25rem;
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .qa-item .qa-q {
@@ -1319,7 +1461,7 @@ h3 {
 
 .qa-a {
   margin-top: 0;
-  color: var(--muted);
+  color: var(--body-ink);
 }
 
 .qa-item .qa-a {
@@ -1332,7 +1474,8 @@ h3 {
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--surface);
+  background: var(--white);
+  box-shadow: 0 8px 22px rgba(9, 35, 40, 0.06);
 }
 
 .section-figure img {
@@ -1351,13 +1494,13 @@ h3 {
   padding: 0.85rem 1.1rem;
   font-size: 0.88rem;
   color: var(--muted);
-  background: var(--surface-2);
+  background: var(--surface-tint);
   border-top: 1px solid var(--line);
   line-height: 1.5;
 }
 
 .section-figure figcaption strong {
-  color: #ffffff;
+  color: var(--teal-deep);
 }
 
 .image-grid {
@@ -1379,7 +1522,7 @@ h3 {
 .diagram {
   width: min(100%, 40rem);
   height: auto;
-  background: #f4f1ea;
+  background: var(--surface-tint);
   border: 1px solid var(--line);
   border-radius: 4px;
   padding: 0.5rem;
@@ -1397,7 +1540,7 @@ h3 {
 }
 
 .quote-tool fieldset {
-  background: var(--surface);
+  background: var(--surface-tint);
   border: 1px solid var(--line);
   border-radius: 4px;
   margin: 0 0 1rem;
@@ -1411,7 +1554,7 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.1rem;
-  color: #ffffff;
+  color: var(--teal-deep);
   padding: 0 0.35rem;
 }
 
@@ -1428,7 +1571,7 @@ h3 {
   align-items: flex-start;
   min-height: 40px;
   padding: 0.45rem 0;
-  color: #d4d4d4;
+  color: var(--teal-deep);
 }
 
 .quote-tool input {
@@ -1456,7 +1599,7 @@ h3 {
   border-radius: 2px;
   border: 1px solid var(--accent);
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   padding: 0.45rem 1.1rem;
   font-family: var(--font-display);
   font-weight: 700;
@@ -1467,14 +1610,14 @@ h3 {
 
 .tool-actions button:last-child {
   background: transparent;
-  border-color: var(--line-strong);
-  color: #ffffff;
+  border-color: var(--forest);
+  color: var(--teal-deep);
 }
 
 .tool-actions button:hover {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  color: #ffffff;
+  color: var(--white);
 }
 
 .briefing:empty {
@@ -1505,7 +1648,7 @@ h3 {
   padding: 0.45rem 1.1rem;
   border-radius: 2px;
   background: var(--accent);
-  color: #ffffff;
+  color: var(--white);
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 0.95rem;
@@ -1519,16 +1662,16 @@ h3 {
 .btn-call:hover {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
-  color: #ffffff;
+  color: var(--white);
 }
 
 /* ==========================================================================
-   Structured Multi-Column Dark Footer
+   Structured Multi-Column Deep Teal Footer (#092328)
    ========================================================================== */
 .site-footer {
-  background: #0d0d0d;
-  color: #cfcfcf;
-  border-top: 1px solid var(--line);
+  background: var(--teal-deep);
+  color: var(--on-dark-muted);
+  border-top: 1px solid var(--forest);
   padding: 3rem 0 2rem;
 }
 
@@ -1536,7 +1679,7 @@ h3 {
   display: grid;
   gap: 2rem;
   padding-bottom: 2.25rem;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--forest);
 }
 
 .footer-brand-row {
@@ -1552,14 +1695,14 @@ h3 {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #ffffff;
+  color: var(--white);
   margin: 0;
 }
 
 .footer-about {
   margin: 0;
   font-size: 0.86rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   max-width: 22rem;
   line-height: 1.6;
 }
@@ -1571,7 +1714,7 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-links {
@@ -1583,7 +1726,7 @@ h3 {
 }
 
 .footer-links a {
-  color: var(--muted);
+  color: var(--on-dark-muted);
   font-size: 0.84rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -1591,14 +1734,27 @@ h3 {
 }
 
 .footer-links a:hover {
-  color: var(--accent);
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
 .footer-cta-note {
   margin: 0 0 0.9rem;
   font-size: 0.84rem;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   line-height: 1.5;
+}
+
+.site-footer .btn-outline {
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.site-footer .btn-outline:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
 }
 
 .footer-bottom {
@@ -1609,7 +1765,7 @@ h3 {
   gap: 0.75rem 1.5rem;
   padding-top: 1.35rem;
   font-size: 0.78rem;
-  color: #7d7d7d;
+  color: #9cbab6;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
@@ -1617,7 +1773,7 @@ h3 {
 .footer-bottom .footer-meta {
   margin: 0;
   font-size: 0.78rem;
-  color: #7d7d7d;
+  color: #9cbab6;
 }
 
 .footer-legal-links {
@@ -1627,12 +1783,14 @@ h3 {
 }
 
 .footer-legal-links a {
-  color: #999999;
+  color: var(--on-dark-muted);
   text-decoration: none;
 }
 
 .footer-legal-links a:hover {
-  color: var(--accent);
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
 }
 
 :focus-visible {
@@ -1788,15 +1946,15 @@ h3 {
   }
 
   body {
-    background: #ffffff;
-    color: #111111;
+    background: #FFFFFF;
+    color: #092328;
   }
 
   .sheet,
   .briefing {
     box-shadow: none;
     border: 0;
-    background: #ffffff;
-    color: #111111;
+    background: #FFFFFF;
+    color: #092328;
   }
 }
