@@ -14,7 +14,7 @@
     "e164": null,
     "display": null
   },
-  "noindex": true,
+  "noindex": false,
   "showPreviewBanner": false,
   "productionHost": "https://www.auroracoplumbers.com",
   "canonicalHost": "https://www.auroracoplumbers.com",

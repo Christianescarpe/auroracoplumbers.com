@@ -339,6 +339,7 @@ def render(site: dict, page: dict) -> str:
   <meta name="description" content="{esc(description)}">
   <meta name="robots" content="{robots_val}">
   <meta name="googlebot" content="{robots_val}">
+  <meta name="google-site-verification" content="JkpZ3Yh5Hg6FZfJqe5YrJQtoSaXfTg7oIM5E-PEHtUo" />
   <link rel="canonical" href="{esc(canonical)}">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="theme-color" content="#092328">

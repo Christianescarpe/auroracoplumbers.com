@@ -100,7 +100,7 @@
       "headers": [
         {
           "key": "X-Robots-Tag",
-          "value": "noindex, follow"
+          "value": "index, follow"
         },
         {
           "key": "X-Content-Type-Options",
