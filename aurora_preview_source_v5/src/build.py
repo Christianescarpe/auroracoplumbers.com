@@ -422,7 +422,7 @@ def render(site: dict, page: dict) -> str:
       </div>
     </div>
   </footer>
-  <script src="/js/site.js"></script>
+  <script src="/js/site.js" defer></script>
   {page.get("extra_scripts", "")}
 </body>
 </html>

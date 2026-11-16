@@ -115,6 +115,15 @@
           "value": "max-age=63072000; includeSubDomains; preload"
         }
       ]
+    },
+    {
+      "source": "/404.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

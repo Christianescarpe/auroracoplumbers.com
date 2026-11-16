@@ -522,7 +522,7 @@ def checklist(site: dict) -> dict:
         "guide",
         body,
     )
-    page["extra_scripts"] = '<script src="/js/quote.js"></script>'
+    page["extra_scripts"] = '<script src="/js/quote.js" defer></script>'
     return page
 
 

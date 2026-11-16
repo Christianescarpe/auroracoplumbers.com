@@ -14,7 +14,7 @@ def sewer_repair(site: dict) -> dict:
       <p>Inside the house, a single slow fixture is often a branch clog. <a href="/services/drain-cleaning/">Drain cleaning</a> is the page for that. When several fixtures drain together, a lower-level shower or floor drain fills, or sewage comes back only at the bottom of the house, the problem may be the service line that leaves the building. Aurora Water's <a href="{WASTE}" rel="noopener noreferrer">wastewater page</a> says that lateral, from the sewer tap to the service address, is the owner's to maintain, along with the plumbing inside the building.</p>
       <p>The same page says Aurora Water maintains the city main and the manholes, in streets, alleys, and easements. It also says a common misconception is that the utility will make the repair and pay the damage. It will not, when the break is on the owner's service line or at the tap. The owner's list includes the tee or saddle where the service meets the main, and the street or property repair if that work disturbs them. Call 811 to locate the service line and tap. Aurora Water locates the city main.</p>
       <figure>
-        <img class="diagram" src="/img/lateral.svg" alt="Diagram: the service line and tap belong to the owner; the city main belongs to Aurora Water.">
+        <img class="diagram" src="/img/lateral.svg" alt="Diagram: the service line and tap belong to the owner; the city main belongs to Aurora Water." width="640" height="220" loading="lazy" decoding="async">
         <figcaption class="caption">The split on Aurora Water's wastewater page. Not a photograph of a job.</figcaption>
       </figure>
       <h2>What should be known before anyone names a method</h2>
@@ -213,7 +213,7 @@ def responsibility(site: dict) -> dict:
       <p>On the <a href="{WASTE}" rel="noopener noreferrer">wastewater page</a>, property owners are responsible for maintenance and repair of the wastewater service line from the sewer tap to the service address, and for plumbing inside the building. They are responsible for the connection to the city main, including the tee or saddle. They are responsible for street and property damage if work on that service line or tap affects those areas. They locate the service line and tap by calling 811.</p>
       <p>Aurora Water is responsible for the city main and the manholes, and for street or property damage associated with that city work. It responds to blockage calls by cleaning or inspecting the city main. It locates the city mains. It maintains more than 1,200 miles of sanitary sewer, cleans hundreds of miles a year, and cameras a smaller share of the main. Those figures describe the public system, not a promise to camera your lateral for free. The free offer is a review of video you already have.</p>
       <figure>
-        <img class="diagram" src="/img/lateral.svg" alt="Diagram showing the owner service line meeting the city main at the tap.">
+        <img class="diagram" src="/img/lateral.svg" alt="Diagram showing the owner service line meeting the city main at the tap." width="640" height="220" loading="lazy" decoding="async">
         <figcaption class="caption">Owner's line and tap in copper. City main in green. Based on Aurora Water's description.</figcaption>
       </figure>
       <h2>What this changes in a quote</h2>
